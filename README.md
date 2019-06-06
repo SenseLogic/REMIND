@@ -25,6 +25,8 @@ ReMind is available in the following languages:
 - Norwegian
 - Danish
 
+[![](https://img.youtube.com/vi/zDQo58L_GHA/0.jpg)](https://www.youtube.com/watch?v=zDQo58L_GHA)
+
 ## Version
 
 1.0
