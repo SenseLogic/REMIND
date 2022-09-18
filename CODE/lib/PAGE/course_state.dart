@@ -25,6 +25,7 @@ class COURSE_STATE extends State<COURSE_PAGE>
 
     // -- OPERATIONS
 
+    @override
     void initState(
         )
     {
@@ -284,6 +285,7 @@ class COURSE_STATE extends State<COURSE_PAGE>
 
     // ~~
 
+    @override
     Widget build(
         BuildContext build_context
         )

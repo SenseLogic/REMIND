@@ -45,6 +45,7 @@ class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProvide
 
     // -- OPERATIONS
 
+    @override
     void initState(
         )
     {
@@ -268,6 +269,7 @@ class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProvide
 
     // ~~
 
+    @override
     Widget build(
         BuildContext build_context
         )

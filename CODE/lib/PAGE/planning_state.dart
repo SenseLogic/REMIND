@@ -24,6 +24,7 @@ class PLANNING_STATE extends State<PLANNING_PAGE>
 
     // -- OPERATIONS
 
+    @override
     void initState(
         )
     {
@@ -267,6 +268,7 @@ class PLANNING_STATE extends State<PLANNING_PAGE>
 
     // ~~
 
+    @override
     Widget build(
         BuildContext build_context
         )

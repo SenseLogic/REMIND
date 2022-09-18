@@ -27,6 +27,7 @@ class CHAPTER_STATE extends State<CHAPTER_PAGE>
 
     // -- OPERATIONS
 
+    @override
     void initState(
         )
     {
@@ -464,6 +465,7 @@ class CHAPTER_STATE extends State<CHAPTER_PAGE>
 
     // ~~
 
+    @override
     Widget build(
         BuildContext build_context
         )

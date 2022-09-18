@@ -215,6 +215,7 @@ class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE>
 
     // ~~
 
+    @override
     Widget build(
         BuildContext build_context
         )
