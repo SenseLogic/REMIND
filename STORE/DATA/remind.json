@@ -1,0 +1,246 @@
+{
+    "FileVersion" : 1,
+    "Hue" : 0.5419960474308297,
+    "FontSize" : 15.012351778656127,
+    "Language" : "English",
+    "PlanningList" :
+    [
+        {
+            "Identifier" : 2,
+            "Name" : "",
+            "SpacingList" :
+            [
+                {
+                    "Value" : 1,
+                    "IsMultiplicative" : false
+                },
+                {
+                    "Value" : 7,
+                    "IsMultiplicative" : false
+                },
+                {
+                    "Value" : 16,
+                    "IsMultiplicative" : false
+                },
+                {
+                    "Value" : 35,
+                    "IsMultiplicative" : false
+                },
+                {
+                    "Value" : 22,
+                    "IsMultiplicative" : true
+                }
+            ]
+        },
+        {
+            "Identifier" : 25,
+            "Name" : "",
+            "SpacingList" :
+            [
+                {
+                    "Value" : 1,
+                    "IsMultiplicative" : false
+                },
+                {
+                    "Value" : 7,
+                    "IsMultiplicative" : false
+                },
+                {
+                    "Value" : 15,
+                    "IsMultiplicative" : false
+                },
+                {
+                    "Value" : 30,
+                    "IsMultiplicative" : false
+                },
+                {
+                    "Value" : 10,
+                    "IsMultiplicative" : true
+                }
+            ]
+        }
+    ],
+    "CourseList" :
+    [
+        {
+            "Identifier" : 1,
+            "Name" : "Biology",
+            "Status" : "Active",
+            "ChapterList" :
+            [
+                {
+                    "Identifier" : 3,
+                    "Name" : "Anatomy 1",
+                    "Status" : "Active",
+                    "Planning" : 2,
+                    "Date" : "2018-11-12",
+                    "RepetitionCount" : 2,
+                    "OffsetDayCount" : 0
+                },
+                {
+                    "Identifier" : 5,
+                    "Name" : "Anatomy 2",
+                    "Status" : "Active",
+                    "Planning" : 2,
+                    "Date" : "2018-11-18",
+                    "RepetitionCount" : 1,
+                    "OffsetDayCount" : 0
+                },
+                {
+                    "Identifier" : 14,
+                    "Name" : "Anatomy 3",
+                    "Status" : "Active",
+                    "Planning" : 2,
+                    "Date" : "2018-11-26",
+                    "RepetitionCount" : 0,
+                    "OffsetDayCount" : 0
+                },
+                {
+                    "Identifier" : 12,
+                    "Name" : "Physiology 1",
+                    "Status" : "Active",
+                    "Planning" : 2,
+                    "Date" : "2018-11-21",
+                    "RepetitionCount" : 2,
+                    "OffsetDayCount" : 0
+                },
+                {
+                    "Identifier" : 13,
+                    "Name" : "Physiology 2",
+                    "Status" : "Active",
+                    "Planning" : 2,
+                    "Date" : "2018-12-28",
+                    "RepetitionCount" : 1,
+                    "OffsetDayCount" : 0
+                }
+            ]
+        },
+        {
+            "Identifier" : 4,
+            "Name" : "Physics",
+            "Status" : "Active",
+            "ChapterList" :
+            [
+                {
+                    "Identifier" : 7,
+                    "Name" : "Kinetics 1",
+                    "Status" : "Active",
+                    "Planning" : 2,
+                    "Date" : "2018-11-22",
+                    "RepetitionCount" : 4,
+                    "OffsetDayCount" : 0
+                },
+                {
+                    "Identifier" : 8,
+                    "Name" : "Kinetics 2",
+                    "Status" : "Active",
+                    "Planning" : 2,
+                    "Date" : "2018-11-29",
+                    "RepetitionCount" : 3,
+                    "OffsetDayCount" : 0
+                },
+                {
+                    "Identifier" : 9,
+                    "Name" : "Thermodynamics 1",
+                    "Status" : "Active",
+                    "Planning" : 2,
+                    "Date" : "2018-10-3",
+                    "RepetitionCount" : 3,
+                    "OffsetDayCount" : 0
+                },
+                {
+                    "Identifier" : 10,
+                    "Name" : "Thermodynamics 2",
+                    "Status" : "Active",
+                    "Planning" : 2,
+                    "Date" : "2018-12-1",
+                    "RepetitionCount" : 2,
+                    "OffsetDayCount" : 0
+                },
+                {
+                    "Identifier" : 11,
+                    "Name" : "Thermodynamics 3",
+                    "Status" : "Active",
+                    "Planning" : 2,
+                    "Date" : "2018-12-1",
+                    "RepetitionCount" : 1,
+                    "OffsetDayCount" : 0
+                }
+            ]
+        },
+        {
+            "Identifier" : 15,
+            "Name" : "Mathematics",
+            "Status" : "Active",
+            "ChapterList" :
+            [
+                {
+                    "Identifier" : 16,
+                    "Name" : "Algebra 1",
+                    "Status" : "Active",
+                    "Planning" : 2,
+                    "Date" : "2018-12-1",
+                    "RepetitionCount" : 0,
+                    "OffsetDayCount" : 0
+                },
+                {
+                    "Identifier" : 17,
+                    "Name" : "Algebra 2",
+                    "Status" : "Active",
+                    "Planning" : 2,
+                    "Date" : "2018-12-1",
+                    "RepetitionCount" : 0,
+                    "OffsetDayCount" : 0
+                },
+                {
+                    "Identifier" : 18,
+                    "Name" : "Algebra 3",
+                    "Status" : "Active",
+                    "Planning" : 2,
+                    "Date" : "2018-12-1",
+                    "RepetitionCount" : 0,
+                    "OffsetDayCount" : 0
+                },
+                {
+                    "Identifier" : 19,
+                    "Name" : "Calculus 1",
+                    "Status" : "Active",
+                    "Planning" : 2,
+                    "Date" : "2018-12-1",
+                    "RepetitionCount" : 0,
+                    "OffsetDayCount" : 0
+                },
+                {
+                    "Identifier" : 20,
+                    "Name" : "Calculus 2",
+                    "Status" : "Active",
+                    "Planning" : 2,
+                    "Date" : "2018-12-1",
+                    "RepetitionCount" : 0,
+                    "OffsetDayCount" : 0
+                },
+                {
+                    "Identifier" : 21,
+                    "Name" : "Statistics 1",
+                    "Status" : "Active",
+                    "Planning" : 2,
+                    "Date" : "2018-12-1",
+                    "RepetitionCount" : 0,
+                    "OffsetDayCount" : 0
+                }
+            ]
+        },
+        {
+            "Identifier" : 24,
+            "Name" : "Chemistry",
+            "Status" : "Active",
+            "ChapterList" :
+            [
+
+            ]
+        }
+    ],
+    "CourseStatus" : "All",
+    "ChapterStatus" : "All",
+    "LastIdentifier" : 25
+}

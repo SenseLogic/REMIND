@@ -1,0 +1,26 @@
+Spaced repetition planner.
+
+Study your courses more efficiently!
+
+ReMind plans the courses study sessions with increasing time intervals, so that those informations can be memorized more easily.
+
+This revolutionary learning method is now being used by thousands of students worldwide to study their courses more efficiently.
+
+ReMind is available in the following languages:
+
+- English
+- Japanese
+- Korean
+- German
+- French
+- Spanish
+- Portuguese
+- Italian
+- Dutch
+- Swedish
+- Norwegian
+- Danish
+
+Instructions: https://youtu.be/PFiOjpjaod8
+
+Terms of use: http://senselogic.be/terms.html

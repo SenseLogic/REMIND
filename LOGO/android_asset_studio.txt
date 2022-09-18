@@ -1,0 +1,13 @@
+https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html#foreground.type=image&foreground.space.trim=0&foreground.space.pad=0.1&foreColor=rgba(96%2C%20125%2C%20139%2C%200)&backColor=rgb(255%2C%20255%2C%20255)&crop=1&backgroundShape=square&effects=elevate&name=ic_launcher
+
+    Foreground : Image > remind_logo.svg
+    Whitespace : Don't trim
+    Padding : 10%
+    Color : transparent
+    Background color : white
+    Scaling : Crop
+    Shape : Square
+    Effect : Elevate
+    Name : ic_launcher
+
+/home/eric/data/WORK/PROJECT/TOOL/REMIND/android/app/src/main/res
