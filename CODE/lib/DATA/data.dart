@@ -1,5 +1,7 @@
 // -- IMPORTS
 
+// ignore_for_file: non_constant_identifier_names
+
 import "dart:convert";
 import 'dart:io';
 import "package:flutter/material.dart";
@@ -94,18 +96,18 @@ class DATA
         FileVersion = 1,
         LanguageList = [],
         LocaleList = [
-            Locale( "en" ),
-            Locale( "ja" ),
-            Locale( "ko" ),
-            Locale( "de" ),
-            Locale( "fr" ),
-            Locale( "es" ),
-            Locale( "pt" ),
-            Locale( "it" ),
-            Locale( "nl" ),
-            Locale( "sv" ),
-            Locale( "nb" ),
-            Locale( "da" )
+            const Locale( "en" ),
+            const Locale( "ja" ),
+            const Locale( "ko" ),
+            const Locale( "de" ),
+            const Locale( "fr" ),
+            const Locale( "es" ),
+            const Locale( "pt" ),
+            const Locale( "it" ),
+            const Locale( "nl" ),
+            const Locale( "sv" ),
+            const Locale( "nb" ),
+            const Locale( "da" )
         ],
         PlanningList = [],
         CourseList = [],
@@ -561,8 +563,8 @@ class DATA
 
     TextStyle GetSmallTextStyle(
         {
-            color : Colors.black,
-            font_weight : FontWeight.normal
+            color = Colors.black,
+            font_weight = FontWeight.normal
         }
         )
     {
@@ -577,8 +579,8 @@ class DATA
 
     TextStyle GetMediumTextStyle(
         {
-            color : Colors.black,
-            font_weight : FontWeight.normal
+            color = Colors.black,
+            font_weight = FontWeight.normal
         }
         )
     {
@@ -593,8 +595,8 @@ class DATA
 
     TextStyle GetLargeTextStyle(
         {
-            color : Colors.black,
-            font_weight : FontWeight.normal
+            color = Colors.black,
+            font_weight = FontWeight.normal
         }
         )
     {
@@ -609,8 +611,8 @@ class DATA
 
     TextStyle GetBigTextStyle(
         {
-            color : Colors.black,
-            font_weight : FontWeight.normal
+            color = Colors.black,
+            font_weight = FontWeight.normal
         }
         )
     {
@@ -625,8 +627,8 @@ class DATA
 
     TextStyle GetHugeTextStyle(
         {
-            color : Colors.black,
-            font_weight : FontWeight.normal
+            color = Colors.black,
+            font_weight = FontWeight.normal
         }
         )
     {
@@ -641,8 +643,8 @@ class DATA
 
     TextStyle GetGiantTextStyle(
         {
-            color : Colors.black,
-            font_weight : FontWeight.normal
+            color = Colors.black,
+            font_weight = FontWeight.normal
         }
         )
     {
@@ -658,8 +660,8 @@ class DATA
     Text GetSmallText(
         String text,
         {
-            color : Colors.black,
-            font_weight : FontWeight.normal
+            color = Colors.black,
+            font_weight = FontWeight.normal
         }
         )
     {
@@ -678,8 +680,8 @@ class DATA
     Text GetMediumText(
         String text,
         {
-            color : Colors.black,
-            font_weight : FontWeight.normal
+            color = Colors.black,
+            font_weight = FontWeight.normal
         }
         )
     {
@@ -698,8 +700,8 @@ class DATA
     Text GetLargeText(
         String text,
         {
-            color : Colors.black,
-            font_weight : FontWeight.normal
+            color = Colors.black,
+            font_weight = FontWeight.normal
         }
         )
     {
@@ -718,8 +720,8 @@ class DATA
     Text GetBigText(
         String text,
         {
-            color : Colors.black,
-            font_weight : FontWeight.normal
+            color = Colors.black,
+            font_weight = FontWeight.normal
         }
         )
     {
@@ -738,8 +740,8 @@ class DATA
     Text GetHugeText(
         String text,
         {
-            color : Colors.black,
-            font_weight : FontWeight.normal
+            color = Colors.black,
+            font_weight = FontWeight.normal
         }
         )
     {
@@ -758,8 +760,8 @@ class DATA
     Text GetGiantText(
         String text,
         {
-            color : Colors.black,
-            font_weight : FontWeight.normal
+            color = Colors.black,
+            font_weight = FontWeight.normal
         }
         )
     {
@@ -969,7 +971,7 @@ class DATA
 
         try
         {
-            data = new DATA();
+            data = DATA();
             data.SetFromJson( jsonDecode( json_text ) );
 
             Set( data );
@@ -1325,7 +1327,7 @@ class DATA
                         backup_file = file_system_entity;
                         backup_file_path = backup_file.path;
 
-                        if ( backup_file_path.indexOf( "remind_backup_") >= 0 )
+                        if ( backup_file_path.contains( "remind_backup_" ) )
                         {
                             backup = BACKUP();
                             backup.FilePath = backup_file_path;

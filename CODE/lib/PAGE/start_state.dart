@@ -1,5 +1,7 @@
 // -- IMPORTS
 
+// ignore_for_file: non_constant_identifier_names, camel_case_types, empty_constructor_bodies, avoid_renaming_method_parameters
+
 import "package:flutter/material.dart";
 import "start_page.dart";
 
@@ -22,7 +24,7 @@ class START_STATE extends State<START_PAGE>
         BuildContext build_context
         )
     {
-        return Scaffold(
+        return const Scaffold(
             body: SizedBox()
             );
     }

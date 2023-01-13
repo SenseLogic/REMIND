@@ -1,7 +1,8 @@
 // -- IMPORTS
 
+// ignore_for_file: camel_case_types, non_constant_identifier_names
+
 import "language.dart";
-import "genre.dart";
 import "plurality.dart";
 import "translation.dart";
 import "date.dart";
@@ -83,7 +84,7 @@ class KOREAN_LANGUAGE extends LANGUAGE
 
     // -- INQUIRIES
 
-    PLURALITY GetCardinalPlurality(
+    @override PLURALITY GetCardinalPlurality(
         TRANSLATION translation
         )
     {
@@ -92,7 +93,7 @@ class KOREAN_LANGUAGE extends LANGUAGE
 
     // ~~
 
-    PLURALITY GetOrdinalPlurality(
+    @override PLURALITY GetOrdinalPlurality(
         TRANSLATION translation
         )
     {
@@ -101,14 +102,14 @@ class KOREAN_LANGUAGE extends LANGUAGE
 
     // ~~
 
-    String GetDate( DATE date )
+    @override String GetDate( DATE date )
     {
         return "${date.Year}년 ${date.Month}월 ${date.Day}일";
     }
 
     // ~~
 
-    String GetDateTime( DateTime date_time )
+    @override String GetDateTime( DateTime date_time )
     {
         return "${date_time.year}년 ${date_time.month}월 ${date_time.day}일 ${date_time.hour}시 ${date_time.minute}분 ${date_time.second}초";
     }

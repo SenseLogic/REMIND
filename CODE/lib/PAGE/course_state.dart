@@ -1,5 +1,7 @@
 // -- IMPORTS
 
+// ignore_for_file: camel_case_types, non_constant_identifier_names, empty_constructor_bodies, avoid_renaming_method_parameters
+
 import "package:flutter/material.dart";
 import "../DATA/chapter.dart";
 import "../DATA/status.dart";
@@ -42,7 +44,7 @@ class COURSE_STATE extends State<COURSE_PAGE>
         return Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-                SizedBox(
+                const SizedBox(
                     width: 15.0
                     ),
                 Expanded(
@@ -68,7 +70,7 @@ class COURSE_STATE extends State<COURSE_PAGE>
     {
         return Row(
             children: <Widget>[
-                SizedBox(
+                const SizedBox(
                     width: 15.0
                     ),
                 Expanded(
@@ -143,7 +145,7 @@ class COURSE_STATE extends State<COURSE_PAGE>
                             widget.Data.GetText( "Do you want to delete this chapter?" )
                             ),
                         actions: <Widget>[
-                            FlatButton(
+                            TextButton(
                                 child: widget.Data.GetButtonText(
                                     widget.Data.GetText( "CANCEL" )
                                     ),
@@ -153,7 +155,7 @@ class COURSE_STATE extends State<COURSE_PAGE>
                                         Navigator.pop( context, false );
                                     }
                                 ),
-                            FlatButton(
+                            TextButton(
                                 child: widget.Data.GetButtonText(
                                     widget.Data.GetText( "DELETE" )
                                     ),
@@ -214,7 +216,7 @@ class COURSE_STATE extends State<COURSE_PAGE>
                     ),
                 GestureDetector(
                     child: widget.Data.GetPaddedIcon(
-                        Icon( Icons.arrow_downward )
+                        const Icon( Icons.arrow_downward )
                         ),
                     onTap:
                         ()
@@ -229,7 +231,7 @@ class COURSE_STATE extends State<COURSE_PAGE>
                     ),
                 GestureDetector(
                     child: widget.Data.GetPaddedIcon(
-                        Icon( Icons.arrow_upward )
+                        const Icon( Icons.arrow_upward )
                         ),
                     onTap:
                         ()
@@ -244,7 +246,7 @@ class COURSE_STATE extends State<COURSE_PAGE>
                     ),
                 GestureDetector(
                     child: widget.Data.GetPaddedIcon(
-                        Icon( Icons.delete )
+                        const Icon( Icons.delete )
                         ),
                     onTap:
                         ()
@@ -264,7 +266,7 @@ class COURSE_STATE extends State<COURSE_PAGE>
         return Center(
             child: widget.Data.GetColoredButton(
                 IconButton(
-                    icon: Icon(
+                    icon: const Icon(
                         Icons.add,
                         size: 32.0
                         ),
@@ -306,27 +308,27 @@ class COURSE_STATE extends State<COURSE_PAGE>
                                 widget.Data.GetLabelText(
                                     widget.Data.GetText( "Name:" )
                                     ),
-                                SizedBox(
+                                const SizedBox(
                                     height: 8.0
                                     ),
                                 GetNameWidget(),
-                                SizedBox(
+                                const SizedBox(
                                     height: 8.0
                                     ),
                                 widget.Data.GetLabelText(
                                     widget.Data.GetText( "Status:" )
                                     ),
-                                SizedBox(
+                                const SizedBox(
                                     height: 8.0
                                     ),
                                 GetStatusWidget(),
-                                SizedBox(
+                                const SizedBox(
                                     height: 8.0
                                     ),
                                 widget.Data.GetLabelText(
                                     widget.Data.GetText( "Chapters:" )
                                     ),
-                                SizedBox(
+                                const SizedBox(
                                     height: 8.0
                                     ),
                                 Column(
@@ -337,7 +339,7 @@ class COURSE_STATE extends State<COURSE_PAGE>
                                         }
                                         ).toList()
                                     ),
-                                SizedBox(
+                                const SizedBox(
                                     height: 8.0
                                     ),
                                 GetNewChapterWidget()

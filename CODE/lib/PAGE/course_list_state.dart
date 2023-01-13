@@ -1,5 +1,7 @@
 // -- IMPORTS
 
+// ignore_for_file: non_constant_identifier_names, empty_constructor_bodies, camel_case_types, avoid_renaming_method_parameters
+
 import "package:flutter/material.dart";
 import "../DATA/course.dart";
 import "../DATA/status.dart";
@@ -73,7 +75,7 @@ class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE>
                             widget.Data.GetText( "Do you want to delete this course?" )
                             ),
                         actions: <Widget>[
-                            FlatButton(
+                            TextButton(
                                 child: widget.Data.GetButtonText(
                                     widget.Data.GetText( "CANCEL" )
                                     ),
@@ -83,7 +85,7 @@ class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE>
                                         Navigator.pop( context, false);
                                     }
                                 ),
-                            FlatButton(
+                            TextButton(
                                 child: widget.Data.GetButtonText(
                                     widget.Data.GetText( "DELETE" )
                                     ),
@@ -144,7 +146,7 @@ class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE>
                     ),
                 GestureDetector(
                     child: widget.Data.GetPaddedIcon(
-                        Icon( Icons.arrow_downward )
+                        const Icon( Icons.arrow_downward )
                         ),
                     onTap:
                         ()
@@ -159,7 +161,7 @@ class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE>
                     ),
                 GestureDetector(
                     child: widget.Data.GetPaddedIcon(
-                        Icon( Icons.arrow_upward )
+                        const Icon( Icons.arrow_upward )
                         ),
                     onTap:
                         ()
@@ -174,7 +176,7 @@ class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE>
                     ),
                 GestureDetector(
                     child: widget.Data.GetPaddedIcon(
-                        Icon( Icons.delete )
+                        const Icon( Icons.delete )
                         ),
                     onTap:
                         ()
@@ -194,7 +196,7 @@ class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE>
         return Center(
             child: widget.Data.GetColoredButton(
                 IconButton(
-                    icon: Icon(
+                    icon: const Icon(
                         Icons.add,
                         size: 32.0
                         ),
@@ -241,7 +243,7 @@ class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE>
                                 }
                                 ).toList()
                             ),
-                        SizedBox(
+                        const SizedBox(
                             height: 8.0
                             ),
                         GetNewCourseWidget()

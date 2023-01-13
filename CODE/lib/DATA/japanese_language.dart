@@ -1,7 +1,8 @@
 // -- IMPORTS
 
+// ignore_for_file: non_constant_identifier_names, camel_case_types
+
 import "language.dart";
-import "genre.dart";
 import "plurality.dart";
 import "translation.dart";
 import "date.dart";
@@ -83,7 +84,7 @@ class JAPANESE_LANGUAGE extends LANGUAGE
 
     // -- INQUIRIES
 
-    PLURALITY GetCardinalPlurality(
+    @override PLURALITY GetCardinalPlurality(
         TRANSLATION translation
         )
     {
@@ -92,7 +93,7 @@ class JAPANESE_LANGUAGE extends LANGUAGE
 
     // ~~
 
-    PLURALITY GetOrdinalPlurality(
+    @override PLURALITY GetOrdinalPlurality(
         TRANSLATION translation
         )
     {
@@ -101,14 +102,14 @@ class JAPANESE_LANGUAGE extends LANGUAGE
 
     // ~~
 
-    String GetDate( DATE date )
+    @override String GetDate( DATE date )
     {
         return "${date.Year}年${date.Month}月${date.Day}日";
     }
 
     // ~~
 
-    String GetDateTime( DateTime date_time )
+    @override String GetDateTime( DateTime date_time )
     {
         return "${date_time.year}年${date_time.month}月${date_time.day}日 ${date_time.hour}時${date_time.minute}分${date_time.second}秒";
     }

@@ -1,5 +1,7 @@
 // -- IMPORTS
 
+// ignore_for_file: non_constant_identifier_names, empty_constructor_bodies, camel_case_types
+
 import "calendar_spacing.dart";
 import "chapter.dart";
 

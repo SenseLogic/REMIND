@@ -1,7 +1,8 @@
 // -- IMPORTS
 
+// ignore_for_file: camel_case_types, non_constant_identifier_names
+
 import "language.dart";
-import "genre.dart";
 import "plurality.dart";
 import "translation.dart";
 
@@ -82,7 +83,7 @@ class FRENCH_LANGUAGE extends LANGUAGE
 
     // -- INQUIRIES
 
-    PLURALITY GetCardinalPlurality(
+    @override PLURALITY GetCardinalPlurality(
         TRANSLATION translation
         )
     {
@@ -91,13 +92,10 @@ class FRENCH_LANGUAGE extends LANGUAGE
 
     // ~~
 
-    PLURALITY GetOrdinalPlurality(
+    @override PLURALITY GetOrdinalPlurality(
         TRANSLATION translation
         )
     {
         return translation.GetFrenchOrdinalPlurality();
     }
-
-    // ~~
-
 }

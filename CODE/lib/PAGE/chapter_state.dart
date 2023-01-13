@@ -1,5 +1,7 @@
 // -- IMPORTS
 
+// ignore_for_file: camel_case_types, non_constant_identifier_names, empty_constructor_bodies, avoid_renaming_method_parameters
+
 import "package:flutter/material.dart";
 import "../DATA/calendar_spacing.dart";
 import "../DATA/course.dart";
@@ -44,7 +46,7 @@ class CHAPTER_STATE extends State<CHAPTER_PAGE>
         return Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-                SizedBox(
+                const SizedBox(
                     width: 15.0
                     ),
                 Expanded(
@@ -70,7 +72,7 @@ class CHAPTER_STATE extends State<CHAPTER_PAGE>
     {
         return Row(
             children: <Widget>[
-                SizedBox(
+                const SizedBox(
                     width: 15.0
                     ),
                 Expanded(
@@ -135,7 +137,7 @@ class CHAPTER_STATE extends State<CHAPTER_PAGE>
     {
         return Row(
             children: <Widget>[
-                SizedBox(
+                const SizedBox(
                     width: 15.0
                     ),
                 Expanded(
@@ -196,7 +198,7 @@ class CHAPTER_STATE extends State<CHAPTER_PAGE>
     {
         return Row(
             children: <Widget>[
-                SizedBox(
+                const SizedBox(
                     width: 15.0
                     ),
                 Expanded(
@@ -251,7 +253,7 @@ class CHAPTER_STATE extends State<CHAPTER_PAGE>
     {
         return Row(
             children: <Widget>[
-                SizedBox(
+                const SizedBox(
                     width: 15.0
                     ),
                 Expanded(
@@ -288,7 +290,7 @@ class CHAPTER_STATE extends State<CHAPTER_PAGE>
                     ),
                 GestureDetector(
                     child: widget.Data.GetPaddedIcon(
-                        Icon( Icons.remove )
+                        const Icon( Icons.remove )
                         ),
                     onTap:
                         ()
@@ -303,7 +305,7 @@ class CHAPTER_STATE extends State<CHAPTER_PAGE>
                     ),
                 GestureDetector(
                     child: widget.Data.GetPaddedIcon(
-                        Icon( Icons.add )
+                        const Icon( Icons.add )
                         ),
                     onTap:
                         ()
@@ -327,7 +329,7 @@ class CHAPTER_STATE extends State<CHAPTER_PAGE>
     {
         return Row(
             children: <Widget>[
-                SizedBox(
+                const SizedBox(
                     width: 15.0
                     ),
                 Expanded(
@@ -339,7 +341,7 @@ class CHAPTER_STATE extends State<CHAPTER_PAGE>
                     ),
                 GestureDetector(
                     child: widget.Data.GetPaddedIcon(
-                        Icon( Icons.remove )
+                        const Icon( Icons.remove )
                         ),
                     onTap:
                         ()
@@ -357,7 +359,7 @@ class CHAPTER_STATE extends State<CHAPTER_PAGE>
                     ),
                 GestureDetector(
                     child: widget.Data.GetPaddedIcon(
-                        Icon( Icons.add )
+                        const Icon( Icons.add )
                         ),
                     onTap:
                         ()
@@ -386,7 +388,7 @@ class CHAPTER_STATE extends State<CHAPTER_PAGE>
 
         return Row(
             children: <Widget>[
-                SizedBox(
+                const SizedBox(
                     width: 15.0
                     ),
                 Expanded(
@@ -398,7 +400,7 @@ class CHAPTER_STATE extends State<CHAPTER_PAGE>
                     ),
                 GestureDetector(
                     child: widget.Data.GetPaddedIcon(
-                        Icon( Icons.remove )
+                        const Icon( Icons.remove )
                         ),
                     onTap:
                         ()
@@ -413,7 +415,7 @@ class CHAPTER_STATE extends State<CHAPTER_PAGE>
                     ),
                 GestureDetector(
                     child: widget.Data.GetPaddedIcon(
-                        Icon( Icons.add )
+                        const Icon( Icons.add )
                         ),
                     onTap:
                         ()
@@ -444,7 +446,7 @@ class CHAPTER_STATE extends State<CHAPTER_PAGE>
                         children: <Widget>[
                             Row(
                                 children: <Widget>[
-                                    SizedBox(
+                                    const SizedBox(
                                         width: 15.0
                                         ),
                                     Expanded(
@@ -486,11 +488,11 @@ class CHAPTER_STATE extends State<CHAPTER_PAGE>
                                 widget.Data.GetLabelText(
                                     widget.Data.GetText( "Name:" )
                                     ),
-                                SizedBox(
+                                const SizedBox(
                                     height: 8.0
                                     ),
                                 GetNameWidget(),
-                                SizedBox(
+                                const SizedBox(
                                     height: 8.0
                                     ),
                                 widget.Data.GetLabelText(
@@ -508,37 +510,37 @@ class CHAPTER_STATE extends State<CHAPTER_PAGE>
                                 widget.Data.GetLabelText(
                                     widget.Data.GetText( "Date:" )
                                     ),
-                                SizedBox(
+                                const SizedBox(
                                     height: 8.0
                                     ),
                                 GetDateWidget( build_context ),
-                                SizedBox(
+                                const SizedBox(
                                     height: 8.0
                                     ),
                                 widget.Data.GetLabelText(
                                     widget.Data.GetText( "Number of repetitions:" )
                                     ),
-                                SizedBox(
+                                const SizedBox(
                                     height: 8.0
                                     ),
                                 GetRepetitionCountWidget(),
-                                SizedBox(
+                                const SizedBox(
                                     height: 8.0
                                     ),
                                 widget.Data.GetLabelText(
                                     widget.Data.GetText( "Last date:" )
                                     ),
-                                SizedBox(
+                                const SizedBox(
                                     height: 8.0
                                     ),
                                 GetPriorDateWidget(),
-                                SizedBox(
+                                const SizedBox(
                                     height: 8.0
                                     ),
                                 widget.Data.GetLabelText(
                                     widget.Data.GetText( "Next dates:" )
                                     ),
-                                SizedBox(
+                                const SizedBox(
                                     height: 8.0
                                     ),
                                 GetNextDateWidget()

@@ -1,5 +1,7 @@
 // -- IMPORTS
 
+// ignore_for_file: non_constant_identifier_names, camel_case_types, empty_constructor_bodies, avoid_renaming_method_parameters
+
 import "package:flutter/material.dart";
 import "../DATA/calendar.dart";
 import "../DATA/calendar_chapter.dart";
@@ -45,7 +47,7 @@ class CALENDAR_STATE extends State<CALENDAR_PAGE>
             children: <Widget>[
                 widget.Data.GetColoredButton(
                     IconButton(
-                        icon: Icon(
+                        icon: const Icon(
                             Icons.remove,
                             size: 32.0
                             ),
@@ -97,7 +99,7 @@ class CALENDAR_STATE extends State<CALENDAR_PAGE>
                     ),
                 widget.Data.GetColoredButton(
                     IconButton(
-                        icon: Icon(
+                        icon: const Icon(
                             Icons.add,
                             size: 32.0
                             ),
@@ -227,7 +229,7 @@ class CALENDAR_STATE extends State<CALENDAR_PAGE>
     {
         return Column(
             children: <Widget>[
-                SizedBox(
+              const SizedBox(
                     height: 8.0
                     ),
                 Row(
@@ -241,7 +243,7 @@ class CALENDAR_STATE extends State<CALENDAR_PAGE>
                                             widget.Data.GetMediumText(
                                                 widget.Data.GetChapterName( chapter )
                                                 ),
-                                            SizedBox( height: 4.0 ),
+                                          const SizedBox( height: 4.0 ),
                                             GetCalendarSpacingWidget( calendar_chapter.SpacingList )
                                             ]
                                         )
@@ -273,7 +275,7 @@ class CALENDAR_STATE extends State<CALENDAR_PAGE>
                             ),
                         GestureDetector(
                             child: widget.Data.GetPaddedIcon(
-                                Icon( Icons.check )
+                                const Icon( Icons.check )
                                 ),
                             onTap:
                                 ()

@@ -1,7 +1,8 @@
 // -- IMPORTS
 
+// ignore_for_file: camel_case_types, non_constant_identifier_names
+
 import "language.dart";
-import "genre.dart";
 import "plurality.dart";
 import "translation.dart";
 import "date.dart";
@@ -83,7 +84,7 @@ class ENGLISH_LANGUAGE extends LANGUAGE
 
     // -- INQUIRIES
 
-    PLURALITY GetCardinalPlurality(
+    @override PLURALITY GetCardinalPlurality(
         TRANSLATION translation
         )
     {
@@ -92,7 +93,7 @@ class ENGLISH_LANGUAGE extends LANGUAGE
 
     // ~~
 
-    PLURALITY GetOrdinalPlurality(
+    @override PLURALITY GetOrdinalPlurality(
         TRANSLATION translation
         )
     {
@@ -101,14 +102,14 @@ class ENGLISH_LANGUAGE extends LANGUAGE
 
     // ~~
 
-    String GetDate( DATE date )
+    @override String GetDate( DATE date )
     {
         return "${date.Month}-${date.Day}-${date.Year}";
     }
 
     // ~~
 
-    String GetDateTime( DateTime date_time )
+    @override String GetDateTime( DateTime date_time )
     {
         return "${date_time.month}-${date_time.day}-${date_time.year} ${date_time.hour}:${GetIntegerText(date_time.minute,2)}:${GetIntegerText(date_time.second,2)}";
     }

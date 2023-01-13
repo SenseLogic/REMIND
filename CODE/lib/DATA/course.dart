@@ -1,5 +1,7 @@
 // -- IMPORTS
 
+// ignore_for_file: non_constant_identifier_names, empty_constructor_bodies
+
 import "calendar_chapter.dart";
 import "calendar_spacing.dart";
 import "chapter.dart";
@@ -99,7 +101,7 @@ class COURSE
                      && ( calendar_date.IsEqual( current_date )
                           || calendar_spacing_list.last.DelayDayCount == 0 ) )
                 {
-                    calendar_chapter = new CALENDAR_CHAPTER();
+                    calendar_chapter = CALENDAR_CHAPTER();
                     calendar_chapter.Chapter = chapter;
                     calendar_chapter.SpacingList = calendar_spacing_list;
                     calendar_chapter_list.add( calendar_chapter );

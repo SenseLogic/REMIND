@@ -1,5 +1,7 @@
 // -- IMPORTS
 
+// ignore_for_file: camel_case_types, empty_constructor_bodies, non_constant_identifier_names, avoid_renaming_method_parameters
+
 import "package:flutter/material.dart";
 import "../DATA/calendar_spacing.dart";
 import "../DATA/chapter.dart";
@@ -104,7 +106,7 @@ class CHAPTER_LIST_STATE extends State<CHAPTER_LIST_PAGE>
                     ),
                 GestureDetector(
                     child: widget.Data.GetPaddedIcon(
-                        Icon( Icons.arrow_downward )
+                        const Icon( Icons.arrow_downward )
                         ),
                     onTap:
                         ()
@@ -119,7 +121,7 @@ class CHAPTER_LIST_STATE extends State<CHAPTER_LIST_PAGE>
                     ),
                 GestureDetector(
                     child: widget.Data.GetPaddedIcon(
-                        Icon( Icons.arrow_upward )
+                        const Icon( Icons.arrow_upward )
                         ),
                     onTap:
                         ()
@@ -180,7 +182,7 @@ class CHAPTER_LIST_STATE extends State<CHAPTER_LIST_PAGE>
     {
         return Column(
             children: <Widget>[
-                SizedBox(
+              const SizedBox(
                     height: 8.0
                     ),
                 Row(
@@ -195,7 +197,7 @@ class CHAPTER_LIST_STATE extends State<CHAPTER_LIST_PAGE>
                                                 widget.Data.GetChapterName( chapter ),
                                                 color: widget.Data.GetStatusColor( chapter.Status )
                                                 ),
-                                            SizedBox(
+                                            const SizedBox(
                                                 height: 4.0
                                                 ),
                                             GetCalendarSpacingWidget( chapter )
@@ -224,7 +226,7 @@ class CHAPTER_LIST_STATE extends State<CHAPTER_LIST_PAGE>
                             ),
                         GestureDetector(
                             child: widget.Data.GetPaddedIcon(
-                                Icon( Icons.arrow_downward )
+                                const Icon( Icons.arrow_downward )
                                 ),
                             onTap:
                                 ()
@@ -239,7 +241,7 @@ class CHAPTER_LIST_STATE extends State<CHAPTER_LIST_PAGE>
                             ),
                         GestureDetector(
                             child: widget.Data.GetPaddedIcon(
-                                Icon( Icons.arrow_upward )
+                                const Icon( Icons.arrow_upward )
                                 ),
                             onTap:
                                 ()
@@ -286,7 +288,7 @@ class CHAPTER_LIST_STATE extends State<CHAPTER_LIST_PAGE>
                                         widget_list;
 
                                     widget_list = <Widget>[
-                                        SizedBox(
+                                        const SizedBox(
                                             height: 8.0
                                             ),
                                         GetCourseWidget( build_context, course )

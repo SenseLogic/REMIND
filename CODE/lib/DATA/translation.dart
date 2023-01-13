@@ -1,5 +1,7 @@
 // -- IMPORTS
 
+// ignore_for_file: non_constant_identifier_names
+
 import "genre.dart";
 import "plurality.dart";
 
@@ -83,7 +85,7 @@ class TRANSLATION
     String GetQuantityFirstCharacter(
         )
     {
-        if ( Quantity.length == 0 )
+        if ( Quantity.isEmpty )
         {
             return '\0';
         }
@@ -585,7 +587,7 @@ class TRANSLATION
             translation = text_object;
 
             if ( Text == null
-                 || Text.length == 0 )
+                 || Text.isEmpty )
             {
                 Text = translation.Text;
             }
@@ -599,7 +601,7 @@ class TRANSLATION
             text = text_object;
 
             if ( Text == null
-                 || Text.length == 0 )
+                 || Text.isEmpty )
             {
                 Text = text;
             }

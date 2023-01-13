@@ -1,5 +1,7 @@
 // -- IMPORTS
 
+// ignore_for_file: camel_case_types, non_constant_identifier_names
+
 import 'dart:io';
 import "package:flutter/material.dart";
 import 'package:path_provider/path_provider.dart';

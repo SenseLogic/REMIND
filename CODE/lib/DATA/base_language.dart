@@ -1,5 +1,7 @@
 // -- IMPORTS
 
+// ignore_for_file: camel_case_types, non_constant_identifier_names, empty_constructor_bodies
+
 import "genre.dart";
 import "plurality.dart";
 import "translation.dart";
@@ -235,7 +237,7 @@ class BASE_LANGUAGE
         List<String>
             capital_case_character_list;
 
-        if ( text.length > 0
+        if ( text.isNotEmpty
              && !IsUpperCaseCharacter( text[ 0 ] ) )
         {
             capital_case_character_list = text.split( "" );
@@ -257,8 +259,8 @@ class BASE_LANGUAGE
         )
     {
         return
-            text.length > 0
-            && first_characters.indexOf( text[ 0 ] ) >= 0;
+            text.isNotEmpty
+            && first_characters.contains( text[ 0 ] );
     }
 
     // ~~

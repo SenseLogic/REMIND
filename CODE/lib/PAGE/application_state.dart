@@ -1,5 +1,7 @@
 // -- IMPORTS
 
+// ignore_for_file: non_constant_identifier_names, empty_constructor_bodies, camel_case_types, avoid_renaming_method_parameters
+
 import "package:flutter/material.dart";
 import 'package:flutter_localizations/flutter_localizations.dart';
 import "../DATA/page_index.dart";
@@ -39,8 +41,6 @@ class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProvide
             case PAGE_INDEX.BackupList : return BACKUP_LIST_PAGE( this, widget.Data );
             case PAGE_INDEX.SettingList : return OPTION_LIST_PAGE( this, widget.Data );
         }
-
-        return null;
     }
 
     // -- OPERATIONS
@@ -50,21 +50,21 @@ class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProvide
         )
     {
         super.initState();
-        WidgetsBinding.instance?.addObserver( this );
+        WidgetsBinding.instance.addObserver( this );
     }
 
     // ~~
 
-    void dispose(
+    @override void dispose(
         )
     {
-        WidgetsBinding.instance?.removeObserver(this);
+        WidgetsBinding.instance.removeObserver(this);
         super.dispose();
     }
 
     // ~~
 
-    void didChangeAppLifecycleState(
+    @override void didChangeAppLifecycleState(
         AppLifecycleState state
         )
     {
@@ -115,22 +115,22 @@ class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProvide
                                     color: Colors.white,
                                     shadows: <Shadow>[
                                         Shadow(
-                                            offset: Offset( 1.0, 1.0 ),
+                                            offset: const Offset( 1.0, 1.0 ),
                                             blurRadius: 2.0,
                                             color: widget.Data.AccentColor
                                             ),
                                         Shadow(
-                                            offset: Offset( -1.0, 1.0 ),
+                                            offset: const Offset( -1.0, 1.0 ),
                                             blurRadius: 2.0,
                                             color: widget.Data.AccentColor
                                             ),
                                         Shadow(
-                                            offset: Offset( -1.0, -1.0 ),
+                                            offset: const Offset( -1.0, -1.0 ),
                                             blurRadius: 2.0,
                                             color: widget.Data.AccentColor
                                             ),
                                         Shadow(
-                                            offset: Offset( 1.0, -1.0 ),
+                                            offset: const Offset( 1.0, -1.0 ),
                                             blurRadius: 2.0,
                                             color: widget.Data.AccentColor
                                             )
@@ -143,7 +143,7 @@ class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProvide
                             )
                         ),
                     ListTile(
-                        leading: Icon(
+                        leading: const Icon(
                             Icons.event_note,
                             size: 30.0,
                             color: Colors.black
@@ -163,7 +163,7 @@ class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProvide
                             }
                         ),
                     ListTile(
-                        leading: Icon(
+                        leading: const Icon(
                             Icons.account_balance,
                             size: 30.0,
                             color: Colors.black
@@ -183,7 +183,7 @@ class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProvide
                             }
                         ),
                     ListTile(
-                        leading: Icon(
+                        leading: const Icon(
                             Icons.local_library,
                             size: 30.0,
                             color: Colors.black
@@ -203,7 +203,7 @@ class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProvide
                             }
                         ),
                     ListTile(
-                        leading: Icon(
+                        leading: const Icon(
                             Icons.slow_motion_video,
                             size: 30.0,
                             color: Colors.black
@@ -223,7 +223,7 @@ class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProvide
                             }
                         ),
                     ListTile(
-                        leading: Icon(
+                        leading: const Icon(
                             Icons.archive,
                             size: 30.0,
                             color: Colors.black
@@ -243,7 +243,7 @@ class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProvide
                             }
                         ),
                     ListTile(
-                        leading: Icon(
+                        leading: const Icon(
                             Icons.settings,
                             size: 30.0,
                             color: Colors.black
@@ -284,7 +284,7 @@ class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProvide
                 scaffoldBackgroundColor: widget.Data.BackgroundColor,
                 canvasColor: widget.Data.CanvasColor
                 ),
-            localizationsDelegates: [
+            localizationsDelegates: const [
                 GlobalMaterialLocalizations.delegate,
                 GlobalWidgetsLocalizations.delegate
                 ],

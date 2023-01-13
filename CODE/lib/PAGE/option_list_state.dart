@@ -1,5 +1,7 @@
 // -- IMPORTS
 
+// ignore_for_file: empty_constructor_bodies, non_constant_identifier_names, camel_case_types, avoid_renaming_method_parameters
+
 import "package:flutter/material.dart";
 import "../DATA/language.dart";
 import "option_list_page.dart";
@@ -23,7 +25,7 @@ class OPTION_LIST_STATE extends State<OPTION_LIST_PAGE>
     {
         return Row(
             children: <Widget>[
-                SizedBox(
+                const SizedBox(
                     width: 15.0
                     ),
                 Expanded(
@@ -69,7 +71,7 @@ class OPTION_LIST_STATE extends State<OPTION_LIST_PAGE>
     {
         return Row(
             children: <Widget>[
-                SizedBox(
+                const SizedBox(
                     width: 15.0
                     ),
                 Expanded(
@@ -100,7 +102,7 @@ class OPTION_LIST_STATE extends State<OPTION_LIST_PAGE>
     {
         return Row(
             children: <Widget>[
-                SizedBox(
+                const SizedBox(
                     width: 15.0
                     ),
                 Expanded(

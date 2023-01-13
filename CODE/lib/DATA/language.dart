@@ -1,9 +1,8 @@
 // -- IMPORTS
 
+// ignore_for_file: empty_constructor_bodies, non_constant_identifier_names
+
 import "base_language.dart";
-import "genre.dart";
-import "plurality.dart";
-import "translation.dart";
 import "date.dart";
 
 // -- TYPES

@@ -1,5 +1,7 @@
 // -- IMPORTS
 
+// ignore_for_file: non_constant_identifier_names, camel_case_types, empty_constructor_bodies, avoid_renaming_method_parameters
+
 import "package:flutter/material.dart";
 import "package:flutter/services.dart";
 import "package:share/share.dart";
@@ -39,7 +41,7 @@ class BACKUP_LIST_STATE extends State<BACKUP_LIST_PAGE>
                             widget.Data.GetText( "All current data will be lost." )
                             ),
                         actions: <Widget>[
-                            FlatButton(
+                            TextButton(
                                 child: widget.Data.GetButtonText(
                                     widget.Data.GetText( "CANCEL" )
                                     ),
@@ -49,7 +51,7 @@ class BACKUP_LIST_STATE extends State<BACKUP_LIST_PAGE>
                                         Navigator.pop( context, false);
                                     }
                                 ),
-                            FlatButton(
+                            TextButton(
                                 child: widget.Data.GetButtonText(
                                     widget.Data.GetText( "RESTORE" )
                                     ),
@@ -90,7 +92,7 @@ class BACKUP_LIST_STATE extends State<BACKUP_LIST_PAGE>
                             widget.Data.GetText( "Do you want to delete this backup?" )
                             ),
                         actions: <Widget>[
-                            FlatButton(
+                            TextButton(
                                 child: widget.Data.GetMediumText(
                                     widget.Data.GetText( "CANCEL" )
                                     ),
@@ -100,7 +102,7 @@ class BACKUP_LIST_STATE extends State<BACKUP_LIST_PAGE>
                                         Navigator.pop( context, false);
                                     }
                                 ),
-                            FlatButton(
+                            TextButton(
                                 child: widget.Data.GetMediumText(
                                     widget.Data.GetText( "DELETE" )
                                     ),
@@ -148,7 +150,7 @@ class BACKUP_LIST_STATE extends State<BACKUP_LIST_PAGE>
                     ),
                 GestureDetector(
                     child: widget.Data.GetPaddedIcon(
-                        Icon( Icons.delete )
+                        const Icon( Icons.delete )
                         ),
                     onTap:
                         ()
@@ -168,7 +170,7 @@ class BACKUP_LIST_STATE extends State<BACKUP_LIST_PAGE>
         return Center(
             child: widget.Data.GetColoredButton(
                 IconButton(
-                    icon: Icon(
+                    icon: const Icon(
                         Icons.add,
                         size: 32.0
                         ),
@@ -213,7 +215,7 @@ class BACKUP_LIST_STATE extends State<BACKUP_LIST_PAGE>
                             widget.Data.GetText( "Do you want to export the application data into the clipboard?" )
                             ),
                         actions: <Widget>[
-                            FlatButton(
+                            TextButton(
                                 child: widget.Data.GetButtonText(
                                     widget.Data.GetText( "CANCEL" )
                                     ),
@@ -223,7 +225,7 @@ class BACKUP_LIST_STATE extends State<BACKUP_LIST_PAGE>
                                         Navigator.pop( context, false);
                                     }
                                 ),
-                            FlatButton(
+                            TextButton(
                                 child: widget.Data.GetButtonText(
                                     widget.Data.GetText( "EXPORT" )
                                     ),
@@ -234,7 +236,7 @@ class BACKUP_LIST_STATE extends State<BACKUP_LIST_PAGE>
                                             ()
                                             {
                                                 Clipboard.setData(
-                                                    new ClipboardData( text: widget.Data.GetIndentedJsonText() )
+                                                    ClipboardData( text: widget.Data.GetIndentedJsonText() )
                                                     );
                                             }
                                             );
@@ -276,7 +278,7 @@ class BACKUP_LIST_STATE extends State<BACKUP_LIST_PAGE>
                                             widget.Data.GetText( "Do you want to import the application data from the clipboard?" )
                                             ),
                                         actions: <Widget>[
-                                            FlatButton(
+                                            TextButton(
                                                 child: widget.Data.GetButtonText(
                                                     widget.Data.GetText( "CANCEL" )
                                                     ),
@@ -286,7 +288,7 @@ class BACKUP_LIST_STATE extends State<BACKUP_LIST_PAGE>
                                                         Navigator.pop( context, false);
                                                     }
                                                 ),
-                                            FlatButton(
+                                            TextButton(
                                                 child: widget.Data.GetButtonText(
                                                     widget.Data.GetText( "IMPORT" )
                                                     ),
@@ -321,7 +323,7 @@ class BACKUP_LIST_STATE extends State<BACKUP_LIST_PAGE>
                                             widget.Data.GetText( "The application data can't be imported because the clipboard content has an invalid format." )
                                             ),
                                         actions: <Widget>[
-                                            FlatButton(
+                                            TextButton(
                                                 child: widget.Data.GetButtonText(
                                                     widget.Data.GetText( "CONTINUE" )
                                                     ),
@@ -365,7 +367,7 @@ class BACKUP_LIST_STATE extends State<BACKUP_LIST_PAGE>
                             }
                         )
                     ),
-                SizedBox( width: 10.0 ),
+                const SizedBox( width: 10.0 ),
                 Expanded(
                     child: GestureDetector(
                         child: widget.Data.GetPaddedColoredButton(
@@ -382,7 +384,7 @@ class BACKUP_LIST_STATE extends State<BACKUP_LIST_PAGE>
                             }
                         )
                     ),
-                SizedBox( width: 10.0 ),
+                const SizedBox( width: 10.0 ),
                 Expanded(
                     child: GestureDetector(
                         child: widget.Data.GetPaddedColoredButton(
@@ -428,11 +430,11 @@ class BACKUP_LIST_STATE extends State<BACKUP_LIST_PAGE>
                                 }
                                 ).toList()
                             ),
-                        SizedBox(
+                        const SizedBox(
                             height: 8.0
                             ),
                         GetNewBackupWidget(),
-                        SizedBox(
+                        const SizedBox(
                             height: 8.0
                             ),
                         GetDatabaseWidget( build_context )

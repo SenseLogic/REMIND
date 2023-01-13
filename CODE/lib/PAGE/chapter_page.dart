@@ -1,5 +1,7 @@
 // -- IMPORTS
 
+// ignore_for_file: camel_case_types, non_constant_identifier_names, empty_constructor_bodies
+
 import "package:flutter/material.dart";
 import "../DATA/chapter.dart";
 import "../DATA/course.dart";

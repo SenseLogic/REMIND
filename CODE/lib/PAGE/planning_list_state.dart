@@ -1,5 +1,7 @@
 // -- IMPORTS
 
+// ignore_for_file: empty_constructor_bodies, non_constant_identifier_names, camel_case_types, avoid_renaming_method_parameters
+
 import "package:flutter/material.dart";
 import "../DATA/planning.dart";
 import "planning_list_page.dart";
@@ -36,7 +38,7 @@ class PLANNING_LIST_STATE extends State<PLANNING_LIST_PAGE>
                                 widget.Data.GetText( "Do you want to delete this planning?" )
                                 ),
                             actions: <Widget>[
-                                FlatButton(
+                                TextButton(
                                     child: widget.Data.GetButtonText(
                                         widget.Data.GetText( "CANCEL" )
                                         ),
@@ -46,7 +48,7 @@ class PLANNING_LIST_STATE extends State<PLANNING_LIST_PAGE>
                                             Navigator.pop( context, false );
                                         }
                                     ),
-                                FlatButton(
+                                TextButton(
                                     child: widget.Data.GetButtonText(
                                         widget.Data.GetText( "DELETE" )
                                         ),
@@ -80,7 +82,7 @@ class PLANNING_LIST_STATE extends State<PLANNING_LIST_PAGE>
                                 widget.Data.GetText( "This planning can't be deleted because it is still used by a chapter." )
                                 ),
                             actions: <Widget>[
-                                FlatButton(
+                                TextButton(
                                     child: widget.Data.GetButtonText(
                                         widget.Data.GetText( "CONTINUE" )
                                         ),
@@ -134,7 +136,7 @@ class PLANNING_LIST_STATE extends State<PLANNING_LIST_PAGE>
                     ),
                 GestureDetector(
                     child: widget.Data.GetPaddedIcon(
-                        Icon( Icons.arrow_downward )
+                        const Icon( Icons.arrow_downward )
                         ),
                     onTap:
                         ()
@@ -149,7 +151,7 @@ class PLANNING_LIST_STATE extends State<PLANNING_LIST_PAGE>
                     ),
                 GestureDetector(
                     child: widget.Data.GetPaddedIcon(
-                        Icon( Icons.arrow_upward )
+                        const Icon( Icons.arrow_upward )
                         ),
                     onTap:
                         ()
@@ -164,7 +166,7 @@ class PLANNING_LIST_STATE extends State<PLANNING_LIST_PAGE>
                     ),
                 GestureDetector(
                     child: widget.Data.GetPaddedIcon(
-                        Icon( Icons.delete )
+                        const Icon( Icons.delete )
                         ),
                     onTap:
                         ()
@@ -184,7 +186,7 @@ class PLANNING_LIST_STATE extends State<PLANNING_LIST_PAGE>
         return Center(
             child: widget.Data.GetColoredButton(
                 IconButton(
-                    icon: Icon(
+                    icon: const Icon(
                         Icons.add,
                         size: 32.0
                         ),
@@ -229,7 +231,7 @@ class PLANNING_LIST_STATE extends State<PLANNING_LIST_PAGE>
                                 }
                                 ).toList()
                             ),
-                        SizedBox(
+                        const SizedBox(
                             height: 8.0
                             ),
                         GetNewPlanningWidget()

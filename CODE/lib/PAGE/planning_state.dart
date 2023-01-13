@@ -1,5 +1,7 @@
 // -- IMPORTS
 
+// ignore_for_file: empty_constructor_bodies, non_constant_identifier_names, camel_case_types, avoid_renaming_method_parameters
+
 import "dart:math";
 import "package:flutter/material.dart";
 import "../DATA/spacing.dart";
@@ -41,7 +43,7 @@ class PLANNING_STATE extends State<PLANNING_PAGE>
         return Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-                SizedBox(
+                const SizedBox(
                     width: 15.0
                     ),
                 Expanded(
@@ -87,7 +89,7 @@ class PLANNING_STATE extends State<PLANNING_PAGE>
                     child: widget.Data.GetPaddedIcon(
                         Transform.rotate(
                             angle: spacing.IsMultiplicative ? pi / 4 : 0.0,
-                            child: Icon( Icons.add_circle_outline )
+                            child: const Icon( Icons.add_circle_outline )
                             )
                         ),
                     onTap:
@@ -153,7 +155,7 @@ class PLANNING_STATE extends State<PLANNING_PAGE>
                     ),
                 GestureDetector(
                     child: widget.Data.GetPaddedIcon(
-                        Icon( Icons.remove )
+                        const Icon( Icons.remove )
                         ),
                     onTap:
                         ()
@@ -169,7 +171,7 @@ class PLANNING_STATE extends State<PLANNING_PAGE>
                     ),
                 GestureDetector(
                     child: widget.Data.GetPaddedIcon(
-                        Icon( Icons.add )
+                        const Icon( Icons.add )
                         ),
                     onTap:
                         ()
@@ -185,7 +187,7 @@ class PLANNING_STATE extends State<PLANNING_PAGE>
                     ),
                 GestureDetector(
                     child: widget.Data.GetPaddedIcon(
-                        Icon( Icons.arrow_downward )
+                        const Icon( Icons.arrow_downward )
                         ),
                     onTap:
                         ()
@@ -200,7 +202,7 @@ class PLANNING_STATE extends State<PLANNING_PAGE>
                     ),
                 GestureDetector(
                     child: widget.Data.GetPaddedIcon(
-                        Icon( Icons.arrow_upward )
+                        const Icon( Icons.arrow_upward )
                         ),
                     onTap:
                         ()
@@ -215,7 +217,7 @@ class PLANNING_STATE extends State<PLANNING_PAGE>
                     ),
                 GestureDetector(
                     child: widget.Data.GetPaddedIcon(
-                        Icon( Icons.delete )
+                        const Icon( Icons.delete )
                         ),
                     onTap:
                         ()
@@ -240,7 +242,7 @@ class PLANNING_STATE extends State<PLANNING_PAGE>
         return Center(
             child: widget.Data.GetColoredButton(
                 IconButton(
-                    icon: Icon(
+                    icon: const Icon(
                         Icons.add,
                         size: 32.0
                         ),
@@ -289,17 +291,17 @@ class PLANNING_STATE extends State<PLANNING_PAGE>
                                 widget.Data.GetLabelText(
                                     widget.Data.GetText( "Name:" )
                                     ),
-                                SizedBox(
+                                const SizedBox(
                                     height: 8.0
                                     ),
                                 GetNameWidget(),
-                                SizedBox(
+                                const SizedBox(
                                     height: 8.0
                                     ),
                                 widget.Data.GetLabelText(
                                     widget.Data.GetText( "Durations:" )
                                     ),
-                                SizedBox(
+                                const SizedBox(
                                     height: 8.0
                                     ),
                                 Column(
@@ -310,7 +312,7 @@ class PLANNING_STATE extends State<PLANNING_PAGE>
                                         }
                                         ).toList()
                                     ),
-                                SizedBox(
+                                const SizedBox(
                                     height: 8.0
                                     ),
                                 GetNewSpacingWidget()

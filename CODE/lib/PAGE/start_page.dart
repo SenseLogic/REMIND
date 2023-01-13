@@ -1,5 +1,7 @@
 // -- IMPORTS
 
+// ignore_for_file: camel_case_types, non_constant_identifier_names
+
 import "dart:async";
 import "package:flutter/material.dart";
 import "../DATA/data.dart";
@@ -27,7 +29,7 @@ class START_PAGE extends StatefulWidget
     {
 
         Timer.periodic(
-            Duration( milliseconds: 100 ),
+            const Duration( milliseconds: 100 ),
             ( Timer timer )
             {
                 if ( data.DocumentFolderPath != null )

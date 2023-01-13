@@ -1,7 +1,8 @@
 // -- IMPORTS
 
+// ignore_for_file: non_constant_identifier_names, camel_case_types
+
 import "language.dart";
-import "genre.dart";
 import "plurality.dart";
 import "translation.dart";
 
@@ -56,7 +57,7 @@ class DANISH_LANGUAGE extends LANGUAGE
         TranslationMap[ "Do you want to delete this planning?" ] = TRANSLATION( "Vil du slette denne planlægning?" );
         TranslationMap[ "Do you want to delete this course?" ] = TRANSLATION( "Vil du slette dette kursus?" );
         TranslationMap[ "Do you want to delete this chapter?" ] = TRANSLATION( "Vil du slette dette kapitel?" );
-        TranslationMap[ "Do you want to export the application data into the clipboard?" ] = TRANSLATION( "Vil du eksportere programdataene til udklipsholder?" + "Do you want to import the application data from the clipboard?" );
+        TranslationMap[ "Do you want to export the application data into the clipboard?" ] = TRANSLATION( "Vil du eksportere programdataene til udklipsholder?" );
         TranslationMap[ "Do you want to import the application data from the clipboard?" ] = TRANSLATION( "Do you want to import the application data from the clipboard?" );
         TranslationMap[ "Do you want to restore the application data from this backup?" ] = TRANSLATION( "Vil du gendanne programdataene fra denne sikkerhedskopi?" );
         TranslationMap[ "This planning can't be deleted because it is still used by a chapter." ] = TRANSLATION( "Denne planlægning kan ikke slettes fordi den stadig bruges af et kapitel." );
@@ -82,7 +83,7 @@ class DANISH_LANGUAGE extends LANGUAGE
 
     // -- INQUIRIES
 
-    PLURALITY GetCardinalPlurality(
+    @override PLURALITY GetCardinalPlurality(
         TRANSLATION translation
         )
     {
@@ -91,13 +92,10 @@ class DANISH_LANGUAGE extends LANGUAGE
 
     // ~~
 
-    PLURALITY GetOrdinalPlurality(
+    @override PLURALITY GetOrdinalPlurality(
         TRANSLATION translation
         )
     {
         return translation.GetDanishOrdinalPlurality();
     }
-
-    // ~~
-
 }
