@@ -2,14 +2,14 @@
 
 // -- IMPORTS
 
+import "package:flutter/material.dart";
 import "../DATA/data.dart";
-import "page.dart";
 import "application_state.dart";
 import "course_list_state.dart";
 
 // -- TYPES
 
-class COURSE_LIST_PAGE extends PAGE
+class COURSE_LIST_PAGE extends StatefulWidget
 {
     // -- ATTRIBUTES
 
@@ -26,7 +26,7 @@ class COURSE_LIST_PAGE extends PAGE
         ) :
         ApplicationState = application_state,
         Data = data,
-        super()
+        super( key: UniqueKey() )
     {
     }
 

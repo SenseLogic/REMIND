@@ -4,7 +4,6 @@
 
 import "package:flutter/material.dart";
 import "page_state.dart";
-import "dart:developer" as developer;
 
 class PAGE_OBSERVER extends NavigatorObserver
 {
@@ -22,7 +21,6 @@ class PAGE_OBSERVER extends NavigatorObserver
         PageStateList = [],
         super()
     {
-developer.log('PAGE_OBSERVER', name: 'PAGE_OBSERVER');
         Instance = this;
     }
 
@@ -32,7 +30,6 @@ developer.log('PAGE_OBSERVER', name: 'PAGE_OBSERVER');
         PAGE_STATE page_state
         )
     {
-developer.log('AddPage', name: 'PAGE_OBSERVER');
         if ( !PageStateList.contains( page_state ) )
         {
           PageStateList.add( page_state );
@@ -45,8 +42,21 @@ developer.log('AddPage', name: 'PAGE_OBSERVER');
         PAGE_STATE page_state
         )
     {
-developer.log('RemovePage', name: 'PAGE_OBSERVER');
         PageStateList.remove( page_state );
+    }
+
+    // ~~
+
+    void Refresh(
+        )
+    {
+        PAGE_STATE
+            page_state;
+
+        for ( page_state in PageStateList )
+        {
+            page_state.Refresh();
+        }
     }
 
     // ~~
@@ -57,14 +67,7 @@ developer.log('RemovePage', name: 'PAGE_OBSERVER');
         Route<dynamic>? previousRoute
         )
     {
-        PAGE_STATE
-            page_state;
-
-developer.log('didPop', name: 'PAGE_OBSERVER');
-        for ( page_state in PageStateList )
-        {
-            page_state.Refresh();
-        }
+        Refresh();
 
         super.didPop(route, previousRoute);
     }
