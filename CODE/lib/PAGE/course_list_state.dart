@@ -7,12 +7,12 @@ import "../DATA/course.dart";
 import "../DATA/status.dart";
 import "course_list_page.dart";
 import "course_page.dart";
-import "page_observer.dart";
-import "page_state.dart";
+import "view_manager.dart";
+import "view_state.dart";
 
 // -- TYPES
 
-class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE> implements PAGE_STATE
+class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE> implements VIEW_STATE
 {
     // -- CONSTRUCTORS
 
@@ -224,7 +224,7 @@ class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE> implements PAGE_STATE
         BuildContext build_context
         )
     {
-        PAGE_OBSERVER.Instance?.AddState( this );
+        VIEW_MANAGER.Instance.Add( this );
 
         return Scaffold(
             appBar: AppBar(
@@ -264,7 +264,7 @@ class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE> implements PAGE_STATE
     void dispose(
         )
     {
-        PAGE_OBSERVER.Instance?.RemoveState( this );
+        VIEW_MANAGER.Instance.Remove( this );
 
         super.dispose();
     }
@@ -275,10 +275,6 @@ class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE> implements PAGE_STATE
     void Refresh(
         )
     {
-        setState(
-            ()
-            {
-            }
-            );
+        setState( (){} );
     }
 }

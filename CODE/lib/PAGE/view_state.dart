@@ -1,4 +1,4 @@
-abstract class PAGE_STATE
+abstract class VIEW_STATE
 {
     void Refresh(
         );
