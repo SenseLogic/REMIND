@@ -7,6 +7,7 @@ import "../DATA/course.dart";
 import "../DATA/status.dart";
 import "course_list_page.dart";
 import "course_page.dart";
+import "page_observer.dart";
 
 // -- TYPES
 
@@ -222,7 +223,7 @@ class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE>
         BuildContext build_context
         )
     {
-        widget.SetBuildContext( build_context );
+        PAGE_OBSERVER.Instance?.AddPage( widget );
 
         return Scaffold(
             appBar: AppBar(
@@ -254,5 +255,16 @@ class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE>
                 ),
             drawer: widget.ApplicationState.GetDrawer( build_context )
             );
+    }
+
+    // ~~
+
+    @override
+    void dispose(
+        )
+    {
+      PAGE_OBSERVER.Instance?.RemovePage( widget );
+
+      super.dispose();
     }
 }

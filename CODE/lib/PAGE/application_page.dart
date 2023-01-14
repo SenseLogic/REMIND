@@ -14,8 +14,6 @@ class APPLICATION_PAGE extends StatefulWidget
 {
     // -- ATTRIBUTES
 
-/*    static RouteObserver<PageRoute>
-        RouteObserver_ = RouteObserver<PageRoute>();*/
     DATA
         Data;
     APPLICATION_STATE?

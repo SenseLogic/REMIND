@@ -3,17 +3,13 @@
 // -- IMPORTS
 
 import "package:flutter/material.dart";
-import 'dart:developer' as developer;
+import "dart:developer" as developer;
+import "page_observer.dart";
 
 // -- TYPES
 
-abstract class PAGE extends StatefulWidget with RouteAware
+abstract class PAGE extends StatefulWidget
 {
-    // -- ATTRIBUTES
-
-    BuildContext?
-        BuildContext_;
-
     // -- CONSTRUCTORS
 
     PAGE(
@@ -24,41 +20,9 @@ abstract class PAGE extends StatefulWidget with RouteAware
 
     // -- OPERATIONS
 
-    void SetBuildContext(
-        BuildContext build_context
+    void Refresh(
         )
     {
-developer.log('SetBuildContext', name: 'PAGE');
-        BuildContext_ = build_context;
-    }
-    
-    // ~~
-
-    void RebuildElements(
-        Element element
-        )
-    {
-        void RebuildElement(
-            Element element
-            )
-        {
-            element.markNeedsBuild();
-            element.visitChildren( RebuildElement );
-        }
-
-        element.visitChildren( RebuildElement );
-    }
-    
-    // ~~
-
-    @override
-    void didPopNext(
-        )
-    {
-developer.log('didPopNext', name: 'PAGE');
-        if ( BuildContext_ != null )
-        {
-            RebuildElements( this as Element );
-        }
+developer.log('Refresh', name: 'PAGE');
     }
 }

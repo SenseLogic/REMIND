@@ -11,6 +11,7 @@ import "calendar_page.dart";
 import "chapter_list_page.dart";
 import "course_list_page.dart";
 import "option_list_page.dart";
+import "page_observer.dart";
 import "planning_list_page.dart";
 import "start_page.dart";
 
@@ -18,6 +19,11 @@ import "start_page.dart";
 
 class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProviderStateMixin, WidgetsBindingObserver
 {
+    // -- ATTRIBUTES
+    
+    PAGE_OBSERVER
+        PageObserver = PAGE_OBSERVER();
+        
     // -- CONSTRUCTORS
 
     APPLICATION_STATE(
@@ -288,7 +294,7 @@ class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProvide
                 ],
             supportedLocales: widget.Data.LocaleList,
             locale: widget.Data.Locale_,
-            //navigatorObservers: <RouteObserver<PageRoute>>[ APPLICATION_PAGE.RouteObserver_ ],
+            navigatorObservers: <NavigatorObserver>[ PageObserver ],
             home: GetView()
             );
     }
