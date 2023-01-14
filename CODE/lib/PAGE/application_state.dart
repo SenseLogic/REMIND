@@ -11,9 +11,9 @@ import "calendar_page.dart";
 import "chapter_list_page.dart";
 import "course_list_page.dart";
 import "option_list_page.dart";
-import "view_manager.dart";
 import "planning_list_page.dart";
 import "start_page.dart";
+import "updater.dart";
 
 // -- TYPES
 
@@ -289,7 +289,7 @@ class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProvide
                 ],
             supportedLocales: widget.Data.LocaleList,
             locale: widget.Data.Locale_,
-            navigatorObservers: <NavigatorObserver>[ VIEW_MANAGER.Instance ],
+            navigatorObservers: <NavigatorObserver>[ Updater.navigatorObserver ],
             home: GetView()
             );
     }

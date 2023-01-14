@@ -189,7 +189,7 @@ class CALENDAR_STATE extends State<CALENDAR_PAGE>
                 )
             );
     }
-    
+
     // ~~
 
     void AddRepetition(

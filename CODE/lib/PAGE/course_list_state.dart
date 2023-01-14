@@ -7,12 +7,12 @@ import "../DATA/course.dart";
 import "../DATA/status.dart";
 import "course_list_page.dart";
 import "course_page.dart";
-import "view_manager.dart";
-import "view_state.dart";
+import "updatable.dart";
+import "updater.dart";
 
 // -- TYPES
 
-class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE> implements VIEW_STATE
+class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE> implements Updatable
 {
     // -- CONSTRUCTORS
 
@@ -224,7 +224,7 @@ class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE> implements VIEW_STATE
         BuildContext build_context
         )
     {
-        VIEW_MANAGER.Instance.Add( this );
+        Updater.add( this );
 
         return Scaffold(
             appBar: AppBar(
@@ -264,7 +264,7 @@ class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE> implements VIEW_STATE
     void dispose(
         )
     {
-        VIEW_MANAGER.Instance.Remove( this );
+        Updater.remove( this );
 
         super.dispose();
     }
@@ -272,7 +272,7 @@ class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE> implements VIEW_STATE
     // ~~
 
     @override
-    void Refresh(
+    void update(
         )
     {
         setState( () {} );
