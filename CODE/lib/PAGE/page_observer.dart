@@ -3,15 +3,15 @@
 // -- IMPORTS
 
 import "package:flutter/material.dart";
-import "page.dart";
+import "page_state.dart";
 import "dart:developer" as developer;
 
 class PAGE_OBSERVER extends NavigatorObserver
 {
     // -- ATTRIBUTES
 
-    List<PAGE>
-        PageList;
+    List<PAGE_STATE>
+        PageStateList;
     static PAGE_OBSERVER?
         Instance;
 
@@ -19,7 +19,7 @@ class PAGE_OBSERVER extends NavigatorObserver
 
     PAGE_OBSERVER(
         ) :
-        PageList = [],
+        PageStateList = [],
         super()
     {
 developer.log('PAGE_OBSERVER', name: 'PAGE_OBSERVER');
@@ -28,25 +28,25 @@ developer.log('PAGE_OBSERVER', name: 'PAGE_OBSERVER');
 
     // -- OPERATIONS
 
-    void AddPage(
-        PAGE page
+    void AddState(
+        PAGE_STATE page_state
         )
     {
 developer.log('AddPage', name: 'PAGE_OBSERVER');
-        if ( !PageList.contains( page ) )
+        if ( !PageStateList.contains( page_state ) )
         {
-            PageList.add(page);
+          PageStateList.add( page_state );
         }
     }
 
     // ~~
 
-    void RemovePage(
-        PAGE page
+    void RemoveState(
+        PAGE_STATE page_state
         )
     {
 developer.log('RemovePage', name: 'PAGE_OBSERVER');
-        PageList.remove( page );
+        PageStateList.remove( page_state );
     }
 
     // ~~
@@ -57,14 +57,13 @@ developer.log('RemovePage', name: 'PAGE_OBSERVER');
         Route<dynamic>? previousRoute
         )
     {
-        PAGE
-            page;
+        PAGE_STATE
+            page_state;
 
 developer.log('didPop', name: 'PAGE_OBSERVER');
-
-        for ( page in PageList)
+        for ( page_state in PageStateList )
         {
-            page.Refresh();
+            page_state.Refresh();
         }
 
         super.didPop(route, previousRoute);

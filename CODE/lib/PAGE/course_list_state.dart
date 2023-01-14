@@ -8,10 +8,11 @@ import "../DATA/status.dart";
 import "course_list_page.dart";
 import "course_page.dart";
 import "page_observer.dart";
+import "page_state.dart";
 
 // -- TYPES
 
-class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE>
+class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE> implements PAGE_STATE
 {
     // -- CONSTRUCTORS
 
@@ -223,7 +224,7 @@ class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE>
         BuildContext build_context
         )
     {
-        PAGE_OBSERVER.Instance?.AddPage( widget );
+        PAGE_OBSERVER.Instance?.AddState( this );
 
         return Scaffold(
             appBar: AppBar(
@@ -263,8 +264,21 @@ class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE>
     void dispose(
         )
     {
-      PAGE_OBSERVER.Instance?.RemovePage( widget );
+        PAGE_OBSERVER.Instance?.RemoveState( this );
 
-      super.dispose();
+        super.dispose();
+    }
+
+    // ~~
+
+    @override
+    void Refresh(
+        )
+    {
+        setState(
+            ()
+            {
+            }
+            );
     }
 }
