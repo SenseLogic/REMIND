@@ -1,9 +1,9 @@
-// -- IMPORTS
-
 // ignore_for_file: non_constant_identifier_names, empty_constructor_bodies, camel_case_types, avoid_renaming_method_parameters
 
+// -- IMPORTS
+
 import "package:flutter/material.dart";
-import 'package:flutter_localizations/flutter_localizations.dart';
+import "package:flutter_localizations/flutter_localizations.dart";
 import "../DATA/page_index.dart";
 import "application_page.dart";
 import "backup_list_page.dart";
@@ -51,6 +51,8 @@ class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProvide
     {
         super.initState();
         WidgetsBinding.instance.addObserver( this );
+        
+        widget.InitializeDocumentPath();
     }
 
     // ~~
@@ -266,16 +268,12 @@ class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProvide
                 )
             );
     }
-
+    
     // ~~
-
-    @override
-    Widget build(
-        BuildContext build_context
+    
+    Widget GetBaseView(
         )
     {
-        widget.State = this;
-
         return MaterialApp(
             title: "ReMind",
             theme: ThemeData(
@@ -290,7 +288,20 @@ class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProvide
                 ],
             supportedLocales: widget.Data.LocaleList,
             locale: widget.Data.Locale_,
+            //navigatorObservers: <RouteObserver<PageRoute>>[ APPLICATION_PAGE.RouteObserver_ ],
             home: GetView()
             );
+    }
+
+    // ~~
+
+    @override
+    Widget build(
+        BuildContext build_context
+        )
+    {
+        widget.State = this;
+
+        return GetBaseView();
     }
 }

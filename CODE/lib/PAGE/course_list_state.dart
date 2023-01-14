@@ -1,6 +1,6 @@
-// -- IMPORTS
-
 // ignore_for_file: non_constant_identifier_names, empty_constructor_bodies, camel_case_types, avoid_renaming_method_parameters
+
+// -- IMPORTS
 
 import "package:flutter/material.dart";
 import "../DATA/course.dart";
@@ -222,6 +222,8 @@ class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE>
         BuildContext build_context
         )
     {
+        widget.SetBuildContext( build_context );
+
         return Scaffold(
             appBar: AppBar(
                 title: widget.Data.GetTitleText(

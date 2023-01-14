@@ -1,6 +1,6 @@
-// -- IMPORTS
+// ignore_for_file: non_constant_identifier_names, empty_constructor_bodies, camel_case_types, avoid_renaming_method_parameters
 
-// ignore_for_file: non_constant_identifier_names, camel_case_types, empty_constructor_bodies, avoid_renaming_method_parameters
+// -- IMPORTS
 
 import "package:flutter/material.dart";
 import "start_page.dart";

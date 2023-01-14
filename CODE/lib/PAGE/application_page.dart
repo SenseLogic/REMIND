@@ -1,6 +1,6 @@
-// -- IMPORTS
+// ignore_for_file: non_constant_identifier_names, empty_constructor_bodies, camel_case_types, avoid_renaming_method_parameters
 
-// ignore_for_file: camel_case_types, non_constant_identifier_names
+// -- IMPORTS
 
 import 'dart:io';
 import "package:flutter/material.dart";
@@ -14,6 +14,8 @@ class APPLICATION_PAGE extends StatefulWidget
 {
     // -- ATTRIBUTES
 
+/*    static RouteObserver<PageRoute>
+        RouteObserver_ = RouteObserver<PageRoute>();*/
     DATA
         Data;
     APPLICATION_STATE?
@@ -27,7 +29,13 @@ class APPLICATION_PAGE extends StatefulWidget
         super( key: UniqueKey() )
     {
         Data.Initialize();
+    }
 
+    // -- OPERATIONS
+
+    void InitializeDocumentPath(
+        )
+    {
         getApplicationDocumentsDirectory().then(
             ( Directory directory )
             {
@@ -35,8 +43,8 @@ class APPLICATION_PAGE extends StatefulWidget
             }
             );
     }
-
-    // -- OPERATIONS
+    
+    // ~~
 
     @override
     APPLICATION_STATE createState(

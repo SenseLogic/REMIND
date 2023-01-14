@@ -1,15 +1,16 @@
-// -- IMPORTS
+// ignore_for_file: non_constant_identifier_names, empty_constructor_bodies, camel_case_types, avoid_renaming_method_parameters
 
-// ignore_for_file: camel_case_types, non_constant_identifier_names, empty_constructor_bodies
+// -- IMPORTS
 
 import "package:flutter/material.dart";
 import "../DATA/data.dart";
+import "page.dart";
 import "application_state.dart";
 import "course_list_state.dart";
 
 // -- TYPES
 
-class COURSE_LIST_PAGE extends StatefulWidget
+class COURSE_LIST_PAGE extends PAGE
 {
     // -- ATTRIBUTES
 
@@ -26,7 +27,7 @@ class COURSE_LIST_PAGE extends StatefulWidget
         ) :
         ApplicationState = application_state,
         Data = data,
-        super( key: UniqueKey() )
+        super()
     {
     }
 
