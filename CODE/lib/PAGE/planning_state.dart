@@ -133,20 +133,12 @@ class PLANNING_STATE extends State<PLANNING_PAGE>
                                 if ( spacing.IsMultiplicative )
                                 {
                                     text_real = double.parse( text.replaceAll( ",", "." ) );
-
-                                    if ( text_real != null )
-                                    {
-                                        spacing.Value = ( text_real * 10.0 + 0.5 ).toInt();
-                                    }
+                                    spacing.Value = ( text_real * 10.0 + 0.5 ).toInt();
                                 }
                                 else
                                 {
                                     text_integer = int.parse( text );
-
-                                    if ( text_integer != null )
-                                    {
-                                        spacing.Value = text_integer;
-                                    }
+                                    spacing.Value = text_integer;
                                 }
 
                                 spacing.Fix();

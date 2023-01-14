@@ -1241,23 +1241,20 @@ class DATA
             file_path,
             json_text;
 
-        if ( DocumentFolderPath != null )
+        file_path = DocumentFolderPath + "remind.json";
+        json_text = GetJsonText();
+
+        if ( json_text != JsonText )
         {
-            file_path = DocumentFolderPath + "remind.json";
-            json_text = GetJsonText();
-
-            if ( json_text != JsonText )
+            try
             {
-                try
-                {
-                    File( file_path ).writeAsStringSync( json_text );
+                File( file_path ).writeAsStringSync( json_text );
 
-                    JsonText = json_text;
-                }
-                catch ( exception )
-                {
-                    debugPrint( exception.toString() );
-                }
+                JsonText = json_text;
+            }
+            catch ( exception )
+            {
+                debugPrint( exception.toString() );
             }
         }
     }
@@ -1273,25 +1270,22 @@ class DATA
         File
             file;
 
-        if ( DocumentFolderPath != null )
+        file_path = DocumentFolderPath + "remind.json";
+        file = File( file_path );
+
+        if ( file.existsSync() )
         {
-            file_path = DocumentFolderPath + "remind.json";
-            file = File( file_path );
-
-            if ( file.existsSync() )
+            try
             {
-                try
-                {
-                    json_text = File( file_path ).readAsStringSync();
-                    //json_text = '{"FileVersion":1,"Hue":0.5,"FontSize":16.0,"Language":"French","PlanningList":[{"Identifier":1,"Name":"+1 +7 +15 +30 x1","SpacingList":[{"Value":1,"IsMultiplicative":false},{"Value":7,"IsMultiplicative":false},{"Value":15,"IsMultiplicative":false},{"Value":30,"IsMultiplicative":false},{"Value":10,"IsMultiplicative":true}]},{"Identifier":2,"Name":"+1 +3 +7 +14 +28 x1.5","SpacingList":[{"Value":1,"IsMultiplicative":false},{"Value":3,"IsMultiplicative":false},{"Value":7,"IsMultiplicative":false},{"Value":14,"IsMultiplicative":false},{"Value":28,"IsMultiplicative":false},{"Value":15,"IsMultiplicative":true}]}],"CourseList":[{"Identifier":3,"Name":"Biology","Status":"Active","ChapterList":[{"Identifier":4,"Name":"Chapter 1","Status":"Active","Planning":1,"Date":"2018-10-1","RepetitionCount":3,"OffsetDayCount":0},{"Identifier":5,"Name":"Chapter 2","Status":"Active","Planning":1,"Date":"2018-10-5","RepetitionCount":1,"OffsetDayCount":0},{"Identifier":6,"Name":"Chapter 3","Status":"Inactive","Planning":1,"Date":"2018-10-15","RepetitionCount":1,"OffsetDayCount":0}]},{"Identifier":7,"Name":"Chemistry","Status":"Active","ChapterList":[{"Identifier":8,"Name":"Chapter 1","Status":"Active","Planning":2,"Date":"2018-8-15","RepetitionCount":2,"OffsetDayCount":0},{"Identifier":9,"Name":"Chapter 2","Status":"Active","Planning":2,"Date":"2018-8-1","RepetitionCount":3,"OffsetDayCount":0},{"Identifier":10,"Name":"Chapter 3","Status":"Inactive","Planning":2,"Date":"2018-9-15","RepetitionCount":4,"OffsetDayCount":0}]}],"CourseStatus":"All","ChapterStatus":"All","LastIdentifier":10}';
+                json_text = File( file_path ).readAsStringSync();
+                //json_text = '{"FileVersion":1,"Hue":0.5,"FontSize":16.0,"Language":"French","PlanningList":[{"Identifier":1,"Name":"+1 +7 +15 +30 x1","SpacingList":[{"Value":1,"IsMultiplicative":false},{"Value":7,"IsMultiplicative":false},{"Value":15,"IsMultiplicative":false},{"Value":30,"IsMultiplicative":false},{"Value":10,"IsMultiplicative":true}]},{"Identifier":2,"Name":"+1 +3 +7 +14 +28 x1.5","SpacingList":[{"Value":1,"IsMultiplicative":false},{"Value":3,"IsMultiplicative":false},{"Value":7,"IsMultiplicative":false},{"Value":14,"IsMultiplicative":false},{"Value":28,"IsMultiplicative":false},{"Value":15,"IsMultiplicative":true}]}],"CourseList":[{"Identifier":3,"Name":"Biology","Status":"Active","ChapterList":[{"Identifier":4,"Name":"Chapter 1","Status":"Active","Planning":1,"Date":"2018-10-1","RepetitionCount":3,"OffsetDayCount":0},{"Identifier":5,"Name":"Chapter 2","Status":"Active","Planning":1,"Date":"2018-10-5","RepetitionCount":1,"OffsetDayCount":0},{"Identifier":6,"Name":"Chapter 3","Status":"Inactive","Planning":1,"Date":"2018-10-15","RepetitionCount":1,"OffsetDayCount":0}]},{"Identifier":7,"Name":"Chemistry","Status":"Active","ChapterList":[{"Identifier":8,"Name":"Chapter 1","Status":"Active","Planning":2,"Date":"2018-8-15","RepetitionCount":2,"OffsetDayCount":0},{"Identifier":9,"Name":"Chapter 2","Status":"Active","Planning":2,"Date":"2018-8-1","RepetitionCount":3,"OffsetDayCount":0},{"Identifier":10,"Name":"Chapter 3","Status":"Inactive","Planning":2,"Date":"2018-9-15","RepetitionCount":4,"OffsetDayCount":0}]}],"CourseStatus":"All","ChapterStatus":"All","LastIdentifier":10}';
 
-                    SetFromJsonText( json_text );
-                    JsonText = json_text;
-                }
-                catch ( exception )
-                {
-                    debugPrint( exception.toString() );
-                }
+                SetFromJsonText( json_text );
+                JsonText = json_text;
+            }
+            catch ( exception )
+            {
+                debugPrint( exception.toString() );
             }
         }
     }
@@ -1314,34 +1308,31 @@ class DATA
 
         BackupList = [];
 
-        if ( DocumentFolderPath != null )
+        try
         {
-            try
+            file_system_entity_list = Directory( DocumentFolderPath ).listSync( recursive: false, followLinks: false );
+
+            for ( file_system_entity in file_system_entity_list )
             {
-                file_system_entity_list = Directory( DocumentFolderPath ).listSync( recursive: false, followLinks: false );
-
-                for ( file_system_entity in file_system_entity_list )
+                if ( file_system_entity is File )
                 {
-                    if ( file_system_entity is File )
+                    backup_file = file_system_entity;
+                    backup_file_path = backup_file.path;
+
+                    if ( backup_file_path.contains( "remind_backup_" ) )
                     {
-                        backup_file = file_system_entity;
-                        backup_file_path = backup_file.path;
+                        backup = BACKUP();
+                        backup.FilePath = backup_file_path;
+                        backup.DateTime_ = backup_file.lastModifiedSync();
 
-                        if ( backup_file_path.contains( "remind_backup_" ) )
-                        {
-                            backup = BACKUP();
-                            backup.FilePath = backup_file_path;
-                            backup.DateTime_ = backup_file.lastModifiedSync();
-
-                            BackupList.add( backup );
-                        }
+                        BackupList.add( backup );
                     }
                 }
             }
-            catch ( exception )
-            {
-                debugPrint( exception.toString() );
-            }
+        }
+        catch ( exception )
+        {
+            debugPrint( exception.toString() );
         }
 
         BackupList.sort(
@@ -1360,18 +1351,15 @@ class DATA
         String
             backup_file_path;
 
-        if ( DocumentFolderPath != null )
-        {
-            backup_file_path = DocumentFolderPath + "remind_backup_" + JSON.GetDateTimeText( DateTime.now() ) + ".json";
+        backup_file_path = DocumentFolderPath + "remind_backup_" + JSON.GetDateTimeText( DateTime.now() ) + ".json";
 
-            try
-            {
-                File( backup_file_path ).writeAsStringSync( GetJsonText() );
-            }
-            catch ( exception )
-            {
-                debugPrint( exception.toString() );
-            }
+        try
+        {
+            File( backup_file_path ).writeAsStringSync( GetJsonText() );
+        }
+        catch ( exception )
+        {
+            debugPrint( exception.toString() );
         }
 
         BuildBackupList();
@@ -1388,22 +1376,19 @@ class DATA
         File
             file;
 
-        if ( DocumentFolderPath != null )
-        {
-            file = File( file_path );
+        file = File( file_path );
 
-            if ( file.existsSync() )
+        if ( file.existsSync() )
+        {
+            try
             {
-                try
-                {
-                    json_text = File( file_path ).readAsStringSync();
-                    SetFromJsonText( json_text );
-                    JsonText = "";
-                }
-                catch ( exception )
-                {
-                    debugPrint( exception.toString() );
-                }
+                json_text = File( file_path ).readAsStringSync();
+                SetFromJsonText( json_text );
+                JsonText = "";
+            }
+            catch ( exception )
+            {
+                debugPrint( exception.toString() );
             }
         }
     }

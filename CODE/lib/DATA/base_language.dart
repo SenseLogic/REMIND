@@ -553,7 +553,7 @@ class BASE_LANGUAGE
         [
             int minimum_fractional_digit_count = 1,
             int maximum_fractional_digit_count = 12,
-            String dot_character = '\0'
+            String dot_character = '\x00'
         ]
         )
     {
@@ -565,7 +565,7 @@ class BASE_LANGUAGE
 
         text = real.toStringAsFixed( maximum_fractional_digit_count );
 
-        if ( dot_character == '\0' )
+        if ( dot_character == '\x00' )
         {
             dot_character = DotCharacter;
         }

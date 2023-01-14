@@ -25,22 +25,19 @@ class START_PAGE extends StatefulWidget
         DATA data
         ) :
         ApplicationState = application_state,
-        super()
+        super( key: UniqueKey() )
     {
 
         Timer.periodic(
             const Duration( milliseconds: 100 ),
             ( Timer timer )
             {
-                if ( data.DocumentFolderPath != null )
-                {
-                    timer.cancel();
+                timer.cancel();
 
-                    data.Load();
-                    data.BuildBackupList();
+                data.Load();
+                data.BuildBackupList();
 
-                    ApplicationState.SetPageIndex( null, PAGE_INDEX.Calendar );
-                }
+                ApplicationState.SetPageIndex( null, PAGE_INDEX.Calendar );
             }
             );
     }

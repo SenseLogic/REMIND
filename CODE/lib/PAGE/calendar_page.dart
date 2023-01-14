@@ -26,7 +26,7 @@ class CALENDAR_PAGE extends StatefulWidget
         ) :
         ApplicationState = application_state,
         Data = data,
-        super()
+        super( key: UniqueKey() )
     {
     }
 

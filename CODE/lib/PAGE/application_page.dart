@@ -24,7 +24,7 @@ class APPLICATION_PAGE extends StatefulWidget
     APPLICATION_PAGE(
         ) :
         Data = DATA(),
-        super()
+        super( key: UniqueKey() )
     {
         Data.Initialize();
 

@@ -31,7 +31,7 @@ class PLANNING_PAGE extends StatefulWidget
         ApplicationState = application_state,
         Data = data,
         Planning = planning,
-        super()
+        super( key: UniqueKey() )
     {
     }
 

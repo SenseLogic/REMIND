@@ -23,8 +23,6 @@ class TRANSLATION
         RealQuantity;
     late GENRE
         Genre;
-    static TRANSLATION?
-        Null = null;
 
     // -- CONSTRUCTORS
 
@@ -87,7 +85,7 @@ class TRANSLATION
     {
         if ( Quantity.isEmpty )
         {
-            return '\0';
+            return '\x00';
         }
         else
         {
@@ -586,8 +584,7 @@ class TRANSLATION
         {
             translation = text_object;
 
-            if ( Text == null
-                 || Text.isEmpty )
+            if ( Text.isEmpty )
             {
                 Text = translation.Text;
             }
@@ -600,8 +597,7 @@ class TRANSLATION
         {
             text = text_object;
 
-            if ( Text == null
-                 || Text.isEmpty )
+            if ( Text.isEmpty )
             {
                 Text = text;
             }

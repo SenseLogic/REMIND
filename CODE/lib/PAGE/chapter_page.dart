@@ -36,7 +36,7 @@ class CHAPTER_PAGE extends StatefulWidget
         Data = data,
         Course = course,
         Chapter = chapter,
-        super()
+        super( key: UniqueKey() )
     {
     }
 

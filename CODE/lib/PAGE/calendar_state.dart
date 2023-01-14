@@ -325,7 +325,7 @@ class CALENDAR_STATE extends State<CALENDAR_PAGE>
                                         widget_list;
 
                                     widget_list = <Widget>[
-                                        SizedBox(
+                                        const SizedBox(
                                             height: 8.0
                                             ),
                                         GetCourseWidget( build_context, calendar_course.Course! )

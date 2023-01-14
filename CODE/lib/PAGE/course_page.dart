@@ -31,7 +31,7 @@ class COURSE_PAGE extends StatefulWidget
         ApplicationState = application_state,
         Data = data,
         Course = course,
-        super()
+        super( key: UniqueKey() )
     {
     }
 

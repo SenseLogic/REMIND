@@ -95,8 +95,7 @@ class COURSE
             {
                 calendar_spacing_list = chapter.GetCalendarSpacingList( calendar_date );
 
-                if ( calendar_spacing_list != null
-                     && calendar_spacing_list.isNotEmpty
+                if ( calendar_spacing_list.isNotEmpty
                      && calendar_spacing_list.last.IsNext
                      && ( calendar_date.IsEqual( current_date )
                           || calendar_spacing_list.last.DelayDayCount == 0 ) )
