@@ -275,6 +275,6 @@ class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE> implements VIEW_STATE
     void Refresh(
         )
     {
-        setState( (){} );
+        setState( () {} );
     }
 }
