@@ -271,18 +271,18 @@ class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE> implements ModelView
     // ~~
 
     @override
-    void updateView(
+    List<dynamic> getModelList(
         )
     {
-        setState( () {} );
+        return [];
     }
 
     // ~~
 
     @override
-    List<dynamic> getModelList(
+    void updateView(
         )
     {
-        return [];
+        setState( () {} );
     }
 }
