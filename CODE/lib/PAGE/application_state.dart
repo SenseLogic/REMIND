@@ -2,6 +2,7 @@
 
 // -- IMPORTS
 
+import "package:influx/influx.dart";
 import "package:flutter/material.dart";
 import "package:flutter_localizations/flutter_localizations.dart";
 import "../DATA/page_index.dart";
@@ -13,7 +14,6 @@ import "course_list_page.dart";
 import "option_list_page.dart";
 import "planning_list_page.dart";
 import "start_page.dart";
-import "updater.dart";
 
 // -- TYPES
 
@@ -289,7 +289,7 @@ class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProvide
                 ],
             supportedLocales: widget.Data.LocaleList,
             locale: widget.Data.Locale_,
-            navigatorObservers: <NavigatorObserver>[ Updater.navigatorObserver ],
+            navigatorObservers: <NavigatorObserver>[ ModelViewNavigatorObserver.instance ],
             home: GetView()
             );
     }

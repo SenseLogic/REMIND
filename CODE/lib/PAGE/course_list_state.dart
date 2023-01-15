@@ -3,16 +3,15 @@
 // -- IMPORTS
 
 import "package:flutter/material.dart";
+import "package:influx/influx.dart";
 import "../DATA/course.dart";
 import "../DATA/status.dart";
 import "course_list_page.dart";
 import "course_page.dart";
-import "updatable.dart";
-import "updater.dart";
 
 // -- TYPES
 
-class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE> implements Updatable
+class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE> implements ModelView
 {
     // -- CONSTRUCTORS
 
@@ -224,7 +223,7 @@ class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE> implements Updatable
         BuildContext build_context
         )
     {
-        Updater.add( this );
+        ModelViewManager.addView( this );
 
         return Scaffold(
             appBar: AppBar(
@@ -264,7 +263,7 @@ class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE> implements Updatable
     void dispose(
         )
     {
-        Updater.remove( this );
+        ModelViewManager.removeView( this );
 
         super.dispose();
     }
@@ -272,9 +271,18 @@ class COURSE_LIST_STATE extends State<COURSE_LIST_PAGE> implements Updatable
     // ~~
 
     @override
-    void update(
+    void updateView(
         )
     {
         setState( () {} );
+    }
+
+    // ~~
+
+    @override
+    List<dynamic> getModelList(
+        )
+    {
+        return [];
     }
 }
