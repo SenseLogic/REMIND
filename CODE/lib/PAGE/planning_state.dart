@@ -4,12 +4,13 @@
 
 import "dart:math";
 import "package:flutter/material.dart";
+import "package:influx/influx.dart";
 import "../DATA/spacing.dart";
 import "planning_page.dart";
 
 // -- TYPES
 
-class PLANNING_STATE extends State<PLANNING_PAGE>
+class PLANNING_STATE extends State<PLANNING_PAGE> implements ModelView
 {
     // -- ATTRIBUTES
 
@@ -267,6 +268,8 @@ class PLANNING_STATE extends State<PLANNING_PAGE>
         BuildContext build_context
         )
     {
+        ModelViewManager.addView( this );
+
         return Scaffold(
             appBar: AppBar(
                 title: widget.Data.GetTitleText(
@@ -315,5 +318,34 @@ class PLANNING_STATE extends State<PLANNING_PAGE>
                 ),
             drawer: widget.ApplicationState.GetDrawer( build_context )
             );
+    }
+
+    // ~~
+
+    @override
+    void dispose(
+        )
+    {
+        ModelViewManager.removeView( this );
+
+        super.dispose();
+    }
+
+    // ~~
+
+    @override
+    List<dynamic> getModelList(
+        )
+    {
+        return [];
+    }
+
+    // ~~
+
+    @override
+    void updateView(
+        )
+    {
+        setState( () {} );
     }
 }

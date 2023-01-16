@@ -3,6 +3,7 @@
 // -- IMPORTS
 
 import "package:flutter/material.dart";
+import "package:influx/influx.dart";
 import "package:flutter/services.dart";
 import "package:share/share.dart";
 import "../DATA/backup.dart";
@@ -11,7 +12,7 @@ import "backup_list_page.dart";
 
 // -- TYPES
 
-class BACKUP_LIST_STATE extends State<BACKUP_LIST_PAGE>
+class BACKUP_LIST_STATE extends State<BACKUP_LIST_PAGE> implements ModelView
 {
     // -- CONSTRUCTORS
 
@@ -412,6 +413,8 @@ class BACKUP_LIST_STATE extends State<BACKUP_LIST_PAGE>
         BuildContext build_context
         )
     {
+        ModelViewManager.addView( this );
+
         return Scaffold(
             appBar: AppBar(
                 title: widget.Data.GetTitleText(
@@ -443,5 +446,34 @@ class BACKUP_LIST_STATE extends State<BACKUP_LIST_PAGE>
                 ),
             drawer: widget.ApplicationState.GetDrawer( build_context )
             );
+    }
+
+    // ~~
+
+    @override
+    void dispose(
+        )
+    {
+        ModelViewManager.removeView( this );
+
+        super.dispose();
+    }
+
+    // ~~
+
+    @override
+    List<dynamic> getModelList(
+        )
+    {
+        return [];
+    }
+
+    // ~~
+
+    @override
+    void updateView(
+        )
+    {
+        setState( () {} );
     }
 }

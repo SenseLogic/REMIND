@@ -3,6 +3,7 @@
 // -- IMPORTS
 
 import "package:flutter/material.dart";
+import "package:influx/influx.dart";
 import "../DATA/chapter.dart";
 import "../DATA/status.dart";
 import "chapter_page.dart";
@@ -10,7 +11,7 @@ import "course_page.dart";
 
 // -- TYPES
 
-class COURSE_STATE extends State<COURSE_PAGE>
+class COURSE_STATE extends State<COURSE_PAGE> implements ModelView
 {
     // -- ATTRIBUTES
 
@@ -292,6 +293,8 @@ class COURSE_STATE extends State<COURSE_PAGE>
         BuildContext build_context
         )
     {
+        ModelViewManager.addView( this );
+
         return Scaffold(
             appBar: AppBar(
                 title: widget.Data.GetTitleText(
@@ -350,5 +353,34 @@ class COURSE_STATE extends State<COURSE_PAGE>
                 ),
             drawer: widget.ApplicationState.GetDrawer( build_context )
             );
+    }
+
+    // ~~
+
+    @override
+    void dispose(
+        )
+    {
+        ModelViewManager.removeView( this );
+
+        super.dispose();
+    }
+
+    // ~~
+
+    @override
+    List<dynamic> getModelList(
+        )
+    {
+        return [];
+    }
+
+    // ~~
+
+    @override
+    void updateView(
+        )
+    {
+        setState( () {} );
     }
 }

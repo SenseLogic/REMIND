@@ -3,6 +3,7 @@
 // -- IMPORTS
 
 import "package:flutter/material.dart";
+import "package:influx/influx.dart";
 import "../DATA/calendar.dart";
 import "../DATA/calendar_chapter.dart";
 import "../DATA/calendar_course.dart";
@@ -16,7 +17,7 @@ import "course_page.dart";
 
 // -- TYPES
 
-class CALENDAR_STATE extends State<CALENDAR_PAGE>
+class CALENDAR_STATE extends State<CALENDAR_PAGE> implements ModelView
 {
     // -- CONSTRUCTORS
 
@@ -304,6 +305,8 @@ class CALENDAR_STATE extends State<CALENDAR_PAGE>
         CALENDAR
             calendar;
 
+        ModelViewManager.addView( this );
+
         calendar = widget.Data.GetCalendar();
 
         return Scaffold(
@@ -356,5 +359,34 @@ class CALENDAR_STATE extends State<CALENDAR_PAGE>
                 ),
             drawer: widget.ApplicationState.GetDrawer( build_context )
             );
+    }
+
+    // ~~
+
+    @override
+    void dispose(
+        )
+    {
+        ModelViewManager.removeView( this );
+
+        super.dispose();
+    }
+
+    // ~~
+
+    @override
+    List<dynamic> getModelList(
+        )
+    {
+        return [];
+    }
+
+    // ~~
+
+    @override
+    void updateView(
+        )
+    {
+        setState( () {} );
     }
 }

@@ -3,13 +3,14 @@
 // -- IMPORTS
 
 import "package:flutter/material.dart";
+import "package:influx/influx.dart";
 import "../DATA/planning.dart";
 import "planning_list_page.dart";
 import "planning_page.dart";
 
 // -- TYPES
 
-class PLANNING_LIST_STATE extends State<PLANNING_LIST_PAGE>
+class PLANNING_LIST_STATE extends State<PLANNING_LIST_PAGE> implements ModelView
 {
     // -- CONSTRUCTORS
 
@@ -212,6 +213,8 @@ class PLANNING_LIST_STATE extends State<PLANNING_LIST_PAGE>
         BuildContext build_context
         )
     {
+        ModelViewManager.addView( this );
+
         return Scaffold(
             appBar: AppBar(
                 title: widget.Data.GetTitleText(
@@ -240,5 +243,34 @@ class PLANNING_LIST_STATE extends State<PLANNING_LIST_PAGE>
                 ),
             drawer: widget.ApplicationState.GetDrawer( build_context )
             );
+    }
+
+    // ~~
+
+    @override
+    void dispose(
+        )
+    {
+        ModelViewManager.removeView( this );
+
+        super.dispose();
+    }
+
+    // ~~
+
+    @override
+    List<dynamic> getModelList(
+        )
+    {
+        return [];
+    }
+
+    // ~~
+
+    @override
+    void updateView(
+        )
+    {
+        setState( () {} );
     }
 }

@@ -3,12 +3,13 @@
 // -- IMPORTS
 
 import "package:flutter/material.dart";
+import "package:influx/influx.dart";
 import "../DATA/language.dart";
 import "option_list_page.dart";
 
 // -- TYPES
 
-class OPTION_LIST_STATE extends State<OPTION_LIST_PAGE>
+class OPTION_LIST_STATE extends State<OPTION_LIST_PAGE> implements ModelView
 {
     // -- CONSTRUCTORS
 
@@ -133,6 +134,8 @@ class OPTION_LIST_STATE extends State<OPTION_LIST_PAGE>
         BuildContext build_context
         )
     {
+        ModelViewManager.addView( this );
+
         return Scaffold(
             appBar: AppBar(
                 title: widget.Data.GetTitleText(
@@ -165,5 +168,34 @@ class OPTION_LIST_STATE extends State<OPTION_LIST_PAGE>
                 ),
             drawer: widget.ApplicationState.GetDrawer( build_context )
             );
+    }
+
+    // ~~
+
+    @override
+    void dispose(
+        )
+    {
+        ModelViewManager.removeView( this );
+
+        super.dispose();
+    }
+
+    // ~~
+
+    @override
+    List<dynamic> getModelList(
+        )
+    {
+        return [];
+    }
+
+    // ~~
+
+    @override
+    void updateView(
+        )
+    {
+        setState( () {} );
     }
 }

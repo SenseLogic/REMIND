@@ -3,6 +3,7 @@
 // -- IMPORTS
 
 import "package:flutter/material.dart";
+import "package:influx/influx.dart";
 import "../DATA/calendar_spacing.dart";
 import "../DATA/course.dart";
 import "../DATA/date.dart";
@@ -12,7 +13,7 @@ import "chapter_page.dart";
 
 // -- TYPES
 
-class CHAPTER_STATE extends State<CHAPTER_PAGE>
+class CHAPTER_STATE extends State<CHAPTER_PAGE> implements ModelView
 {
     // -- ATTRIBUTES
 
@@ -472,6 +473,8 @@ class CHAPTER_STATE extends State<CHAPTER_PAGE>
         BuildContext build_context
         )
     {
+        ModelViewManager.addView( this );
+
         return Scaffold(
             appBar: AppBar(
                 title: widget.Data.GetTitleText(
@@ -551,5 +554,34 @@ class CHAPTER_STATE extends State<CHAPTER_PAGE>
                 ),
             drawer: widget.ApplicationState.GetDrawer( build_context )
             );
+    }
+
+    // ~~
+
+    @override
+    void dispose(
+        )
+    {
+        ModelViewManager.removeView( this );
+
+        super.dispose();
+    }
+
+    // ~~
+
+    @override
+    List<dynamic> getModelList(
+        )
+    {
+        return [];
+    }
+
+    // ~~
+
+    @override
+    void updateView(
+        )
+    {
+        setState( () {} );
     }
 }

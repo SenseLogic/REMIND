@@ -272,9 +272,13 @@ class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProvide
 
     // ~~
 
-    Widget GetBaseView(
+    @override
+    Widget build(
+        BuildContext build_context
         )
     {
+        widget.State = this;
+
         return MaterialApp(
             title: "ReMind",
             theme: ThemeData(
@@ -292,17 +296,5 @@ class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProvide
             navigatorObservers: <NavigatorObserver>[ ModelViewNavigatorObserver.instance ],
             home: GetView()
             );
-    }
-
-    // ~~
-
-    @override
-    Widget build(
-        BuildContext build_context
-        )
-    {
-        widget.State = this;
-
-        return GetBaseView();
     }
 }
