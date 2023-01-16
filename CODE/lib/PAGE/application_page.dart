@@ -12,10 +12,10 @@ class APPLICATION_PAGE extends StatefulWidget
 {
     // -- ATTRIBUTES
 
-    DATA
-        Data;
     APPLICATION_STATE?
         State;
+    final DATA
+        Data;
 
     // -- CONSTRUCTORS
 

@@ -11,7 +11,7 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
   path_provider: ^2.0.11
-  share_plus: ^6.3.0
+  share: ^2.0.4
   influx: ^0.1.5
 dev_dependencies:
   flutter_test:

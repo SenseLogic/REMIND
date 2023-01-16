@@ -13,7 +13,7 @@ class START_PAGE extends StatefulWidget
 {
     // -- ATTRIBUTES
 
-    APPLICATION_STATE
+    final APPLICATION_STATE
         ApplicationState;
 
     // -- CONSTRUCTORS

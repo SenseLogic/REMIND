@@ -11,9 +11,9 @@ class OPTION_LIST_PAGE extends StatefulWidget
 {
     // -- ATTRIBUTES
 
-    APPLICATION_STATE
+    final APPLICATION_STATE
         ApplicationState;
-    DATA
+    final DATA
         Data;
 
     // -- CONSTRUCTORS
