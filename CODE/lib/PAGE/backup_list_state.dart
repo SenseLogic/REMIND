@@ -1,11 +1,9 @@
-// ignore_for_file: non_constant_identifier_names, empty_constructor_bodies, camel_case_types, avoid_renaming_method_parameters
-
 // -- IMPORTS
 
 import "package:flutter/material.dart";
 import "package:influx/influx.dart";
 import "package:flutter/services.dart";
-import "package:share/share.dart";
+import "package:share_plus/share_plus.dart";
 import "../DATA/backup.dart";
 import "../DATA/json.dart";
 import "backup_list_page.dart";

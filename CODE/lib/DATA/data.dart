@@ -1,5 +1,3 @@
-// ignore_for_file: non_constant_identifier_names, empty_constructor_bodies, camel_case_types, avoid_renaming_method_parameters
-
 // -- IMPORTS
 
 import "dart:convert";
@@ -856,12 +854,12 @@ class DATA
     }
 
     // -- OPERATIONS
-    
+
     void NotifyChange(
         )
     {
     }
-    
+
     // ~~
 
     void SetHue(
@@ -879,7 +877,7 @@ class DATA
         BoxColor = color;
         CanvasColor = Colors.white;
         BackgroundColor = Colors.white;
-        
+
         NotifyChange();
     }
 
@@ -900,7 +898,7 @@ class DATA
         IconPadding = FontSize * 0.2;
         ButtonPadding = FontSize * 0.4;
         ButtonRadius = FontSize * 0.2;
-        
+
         NotifyChange();
     }
 
@@ -919,7 +917,7 @@ class DATA
         CourseStatus = data.CourseStatus;
         ChapterStatus = data.ChapterStatus;
         LastIdentifier = data.LastIdentifier;
-        
+
         NotifyChange();
     }
 
@@ -943,7 +941,7 @@ class DATA
 
             AddPlanning( planning );
         }
-        
+
         NotifyChange();
     }
 
@@ -967,7 +965,7 @@ class DATA
 
             AddCourse( course );
         }
-        
+
         NotifyChange();
     }
 
@@ -986,7 +984,7 @@ class DATA
         CourseStatus = JSON.GetStatusFromText( json_dynamic_map[ "CourseStatus" ] );
         ChapterStatus = JSON.GetStatusFromText( json_dynamic_map[ "ChapterStatus" ] );
         LastIdentifier = json_dynamic_map[ "LastIdentifier" ];
-        
+
         NotifyChange();
     }
 
@@ -1010,7 +1008,7 @@ class DATA
         {
             debugPrint( exception.toString() );
         }
-        
+
         NotifyChange();
     }
 
@@ -1020,7 +1018,7 @@ class DATA
         )
     {
         ++LastIdentifier;
-        
+
         NotifyChange();
 
         return LastIdentifier;
@@ -1034,7 +1032,7 @@ class DATA
     {
         Language = language;
         Locale_ = LocaleList[ GetLanguageIndex( language ) ];
-        
+
         NotifyChange();
     }
 
@@ -1045,7 +1043,7 @@ class DATA
         )
     {
         SetLanguage( GetLanguageByName( language_name )! );
-        
+
         NotifyChange();
     }
 
@@ -1056,7 +1054,7 @@ class DATA
         )
     {
         PlanningList.add( added_planning );
-        
+
         NotifyChange();
     }
 
@@ -1072,7 +1070,7 @@ class DATA
         added_planning.Identifier = GetNextId();
 
         AddPlanning( added_planning );
-        
+
         NotifyChange();
 
         return added_planning;
@@ -1089,7 +1087,7 @@ class DATA
         PlanningList.removeWhere(
             ( planning ) => identical( planning, removed_planning )
             );
-        
+
         NotifyChange();
     }
 
@@ -1114,7 +1112,7 @@ class DATA
 
                 PlanningList[ planning_index - 1 ] = planning;
                 PlanningList[ planning_index ] = prior_planning;
-        
+
                 NotifyChange();
 
                 return;
@@ -1143,7 +1141,7 @@ class DATA
 
                 PlanningList[ planning_index ] = next_planning;
                 PlanningList[ planning_index + 1 ] = planning;
-        
+
                 NotifyChange();
 
                 return;
@@ -1158,7 +1156,7 @@ class DATA
         )
     {
         CourseList.add( added_course );
-        
+
         NotifyChange();
     }
 
@@ -1174,7 +1172,7 @@ class DATA
         added_course.Identifier = GetNextId();
 
         AddCourse( added_course );
-        
+
         NotifyChange();
 
         return added_course;
@@ -1189,7 +1187,7 @@ class DATA
         CourseList.removeWhere(
             ( course ) => identical( course, removed_course )
             );
-        
+
         NotifyChange();
     }
 
@@ -1203,7 +1201,7 @@ class DATA
     {
         old_course.RemoveChapter( chapter );
         new_course.AddChapter( chapter );
-        
+
         NotifyChange();
     }
 
@@ -1228,7 +1226,7 @@ class DATA
 
                 CourseList[ course_index - 1 ] = course;
                 CourseList[ course_index ] = prior_course;
-        
+
                 NotifyChange();
 
                 return;
@@ -1257,7 +1255,7 @@ class DATA
 
                 CourseList[ course_index ] = next_course;
                 CourseList[ course_index + 1 ] = course;
-        
+
                 NotifyChange();
 
                 return;
@@ -1271,7 +1269,7 @@ class DATA
         )
     {
         CalendarDate = CalendarDate.GetSum( -1 );
-        
+
         NotifyChange();
     }
 
@@ -1281,7 +1279,7 @@ class DATA
         )
     {
         CalendarDate = CalendarDate.GetSum( 1 );
-        
+
         NotifyChange();
     }
 
@@ -1310,7 +1308,7 @@ class DATA
                 debugPrint( exception.toString() );
             }
         }
-        
+
         NotifyChange();
     }
 
@@ -1343,7 +1341,7 @@ class DATA
                 debugPrint( exception.toString() );
             }
         }
-        
+
         NotifyChange();
     }
 
@@ -1398,7 +1396,7 @@ class DATA
                 return first_backup.DateTime_.compareTo( second_backup.DateTime_ );
             }
             );
-        
+
         NotifyChange();
     }
 
@@ -1422,7 +1420,7 @@ class DATA
         }
 
         BuildBackupList();
-        
+
         NotifyChange();
     }
 
@@ -1452,7 +1450,7 @@ class DATA
                 debugPrint( exception.toString() );
             }
         }
-        
+
         NotifyChange();
     }
 
@@ -1472,7 +1470,7 @@ class DATA
         }
 
         BuildBackupList();
-        
+
         NotifyChange();
     }
 
@@ -1482,7 +1480,7 @@ class DATA
         )
     {
         GetAddedCourse().GetAddedChapter( this );
-        
+
         NotifyChange();
     }
 }
