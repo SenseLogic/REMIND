@@ -108,6 +108,9 @@ class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProvide
                 padding: EdgeInsets.zero,
                 children: <Widget>[
                     DrawerHeader(
+                        decoration: BoxDecoration(
+                            color: widget.Data.PrimaryColor
+                            ),
                         child: Center(
                             child: Text(
                                 "ReMind",
@@ -138,9 +141,6 @@ class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProvide
                                         ]
                                     )
                                 )
-                            ),
-                        decoration: BoxDecoration(
-                            color: widget.Data.PrimaryColor
                             )
                         ),
                     ListTile(
