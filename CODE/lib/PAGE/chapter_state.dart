@@ -11,7 +11,7 @@ import "chapter_page.dart";
 
 // -- TYPES
 
-class CHAPTER_STATE extends State<CHAPTER_PAGE> implements ModelView
+class CHAPTER_STATE extends State<CHAPTER_PAGE> implements View
 {
     // -- ATTRIBUTES
 
@@ -471,7 +471,7 @@ class CHAPTER_STATE extends State<CHAPTER_PAGE> implements ModelView
         BuildContext build_context
         )
     {
-        ModelViewManager.addView( this );
+        ViewManager.instance.addView( this );
 
         return Scaffold(
             appBar: AppBar(
@@ -560,7 +560,7 @@ class CHAPTER_STATE extends State<CHAPTER_PAGE> implements ModelView
     void dispose(
         )
     {
-        ModelViewManager.removeView( this );
+        ViewManager.instance.removeView( this );
 
         super.dispose();
     }
@@ -568,7 +568,7 @@ class CHAPTER_STATE extends State<CHAPTER_PAGE> implements ModelView
     // ~~
 
     @override
-    List<dynamic> getModelList(
+    List<dynamic> getViewData(
         )
     {
         return [];

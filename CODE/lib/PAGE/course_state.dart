@@ -9,7 +9,7 @@ import "course_page.dart";
 
 // -- TYPES
 
-class COURSE_STATE extends State<COURSE_PAGE> implements ModelView
+class COURSE_STATE extends State<COURSE_PAGE> implements View
 {
     // -- ATTRIBUTES
 
@@ -291,7 +291,7 @@ class COURSE_STATE extends State<COURSE_PAGE> implements ModelView
         BuildContext build_context
         )
     {
-        ModelViewManager.addView( this );
+        ViewManager.instance.addView( this );
 
         return Scaffold(
             appBar: AppBar(
@@ -359,7 +359,7 @@ class COURSE_STATE extends State<COURSE_PAGE> implements ModelView
     void dispose(
         )
     {
-        ModelViewManager.removeView( this );
+        ViewManager.instance.removeView( this );
 
         super.dispose();
     }
@@ -367,7 +367,7 @@ class COURSE_STATE extends State<COURSE_PAGE> implements ModelView
     // ~~
 
     @override
-    List<dynamic> getModelList(
+    List<dynamic> getViewData(
         )
     {
         return [];

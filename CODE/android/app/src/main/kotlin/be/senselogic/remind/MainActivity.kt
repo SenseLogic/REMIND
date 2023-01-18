@@ -1,4 +1,4 @@
-package be.senselogic.remind
+package be.senselogic.remindstudyplanner
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -7,7 +7,7 @@ import "option_list_page.dart";
 
 // -- TYPES
 
-class OPTION_LIST_STATE extends State<OPTION_LIST_PAGE> implements ModelView
+class OPTION_LIST_STATE extends State<OPTION_LIST_PAGE> implements View
 {
     // -- CONSTRUCTORS
 
@@ -132,7 +132,7 @@ class OPTION_LIST_STATE extends State<OPTION_LIST_PAGE> implements ModelView
         BuildContext build_context
         )
     {
-        ModelViewManager.addView( this );
+        ViewManager.instance.addView( this );
 
         return Scaffold(
             appBar: AppBar(
@@ -174,7 +174,7 @@ class OPTION_LIST_STATE extends State<OPTION_LIST_PAGE> implements ModelView
     void dispose(
         )
     {
-        ModelViewManager.removeView( this );
+        ViewManager.instance.removeView( this );
 
         super.dispose();
     }
@@ -182,7 +182,7 @@ class OPTION_LIST_STATE extends State<OPTION_LIST_PAGE> implements ModelView
     // ~~
 
     @override
-    List<dynamic> getModelList(
+    List<dynamic> getViewData(
         )
     {
         return [];

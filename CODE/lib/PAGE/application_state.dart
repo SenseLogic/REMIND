@@ -15,7 +15,7 @@ import "start_page.dart";
 
 // -- TYPES
 
-class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProviderStateMixin, WidgetsBindingObserver
+class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProviderStateMixin, WidgetsBindingObserver implements View
 {
     // -- CONSTRUCTORS
 
@@ -52,15 +52,6 @@ class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProvide
         WidgetsBinding.instance.addObserver( this );
 
         widget.InitializeDocumentPath();
-    }
-
-    // ~~
-
-    @override void dispose(
-        )
-    {
-        WidgetsBinding.instance.removeObserver(this);
-        super.dispose();
     }
 
     // ~~
@@ -270,29 +261,89 @@ class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProvide
 
     // ~~
 
+    MaterialColor GetThemeColor(
+        )
+    {
+        Color
+            primary_color;
+
+        primary_color = widget.Data.PrimaryColor;
+
+        return MaterialColor(
+            primary_color.value,
+            <int, Color>{
+                50: primary_color.withOpacity( 0.1 ),
+                100: primary_color.withOpacity( 0.2 ),
+                200: primary_color.withOpacity( 0.3 ),
+                300: primary_color.withOpacity( 0.4 ),
+                400: primary_color.withOpacity( 0.5 ),
+                500: primary_color.withOpacity( 0.6 ),
+                600: primary_color.withOpacity( 0.7 ),
+                700: primary_color.withOpacity( 0.8 ),
+                800: primary_color.withOpacity( 0.9 ),
+                900: primary_color.withOpacity( 1.0 )
+            }
+            );
+    }
+
+    // ~~
+
     @override
     Widget build(
         BuildContext build_context
         )
     {
+        ViewManager.instance.addView( this );
+
         widget.State = this;
+
+        var theme_data
+            = ThemeData.light();
+
+        theme_data = theme_data.copyWith(
+            colorScheme: ColorScheme.fromSwatch( primarySwatch: GetThemeColor() )
+            );
 
         return MaterialApp(
             title: "ReMind",
-            theme: ThemeData(
-                primaryColor: widget.Data.PrimaryColor,
-                accentColor: widget.Data.AccentColor,
-                scaffoldBackgroundColor: widget.Data.BackgroundColor,
-                canvasColor: widget.Data.CanvasColor
-                ),
+            theme: theme_data,
             localizationsDelegates: const [
                 GlobalMaterialLocalizations.delegate,
                 GlobalWidgetsLocalizations.delegate
                 ],
             supportedLocales: widget.Data.LocaleList,
             locale: widget.Data.Locale_,
-            navigatorObservers: <NavigatorObserver>[ ModelViewNavigatorObserver.instance ],
+            navigatorObservers: <NavigatorObserver>[ ViewNavigatorObserver.instance ],
             home: GetView()
             );
+    }
+    // ~~
+
+    @override
+    void dispose(
+        )
+    {
+        WidgetsBinding.instance.removeObserver(this);
+        ViewManager.instance.removeView( this );
+
+        super.dispose();
+    }
+
+    // ~~
+
+    @override
+    List<dynamic> getViewData(
+        )
+    {
+        return [];
+    }
+
+    // ~~
+
+    @override
+    void updateView(
+        )
+    {
+        setState( () {} );
     }
 }

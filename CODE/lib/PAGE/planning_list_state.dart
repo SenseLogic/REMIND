@@ -8,7 +8,7 @@ import "planning_page.dart";
 
 // -- TYPES
 
-class PLANNING_LIST_STATE extends State<PLANNING_LIST_PAGE> implements ModelView
+class PLANNING_LIST_STATE extends State<PLANNING_LIST_PAGE> implements View
 {
     // -- CONSTRUCTORS
 
@@ -211,7 +211,7 @@ class PLANNING_LIST_STATE extends State<PLANNING_LIST_PAGE> implements ModelView
         BuildContext build_context
         )
     {
-        ModelViewManager.addView( this );
+        ViewManager.instance.addView( this );
 
         return Scaffold(
             appBar: AppBar(
@@ -249,7 +249,7 @@ class PLANNING_LIST_STATE extends State<PLANNING_LIST_PAGE> implements ModelView
     void dispose(
         )
     {
-        ModelViewManager.removeView( this );
+        ViewManager.instance.removeView( this );
 
         super.dispose();
     }
@@ -257,7 +257,7 @@ class PLANNING_LIST_STATE extends State<PLANNING_LIST_PAGE> implements ModelView
     // ~~
 
     @override
-    List<dynamic> getModelList(
+    List<dynamic> getViewData(
         )
     {
         return [];
