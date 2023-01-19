@@ -22,8 +22,15 @@ class START_STATE extends State<START_PAGE>
         BuildContext build_context
         )
     {
-        return const Scaffold(
-            body: SizedBox()
+        return Scaffold(
+            body: Container(
+                width: double.infinity,
+                height: double.infinity,
+                alignment: Alignment.center,
+                child: const Image(
+                    image: AssetImage( "media/image/remind_logo.png" )
+                    )
+                )
             );
     }
 }

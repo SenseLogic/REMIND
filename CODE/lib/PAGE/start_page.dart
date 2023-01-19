@@ -33,7 +33,7 @@ class START_PAGE extends StatefulWidget
         InitializeDocumentFolderPath();
 
         Timer.periodic(
-            const Duration( milliseconds: 100 ),
+            const Duration( milliseconds: 2500 ),
             ( Timer timer )
             {
                 if ( Data.DocumentFolderPath != "" )
