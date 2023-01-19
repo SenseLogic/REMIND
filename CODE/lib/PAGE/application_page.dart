@@ -1,8 +1,6 @@
 // -- IMPORTS
 
-import 'dart:io';
 import "package:flutter/material.dart";
-import 'package:path_provider/path_provider.dart';
 import "../DATA/data.dart";
 import "application_state.dart";
 
@@ -28,19 +26,6 @@ class APPLICATION_PAGE extends StatefulWidget
     }
 
     // -- OPERATIONS
-
-    void InitializeDocumentPath(
-        )
-    {
-        getApplicationDocumentsDirectory().then(
-            ( Directory directory )
-            {
-                Data.DocumentFolderPath = directory.path + "/";
-            }
-            );
-    }
-
-    // ~~
 
     @override
     APPLICATION_STATE createState(

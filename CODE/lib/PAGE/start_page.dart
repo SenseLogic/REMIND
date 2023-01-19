@@ -1,7 +1,9 @@
 // -- IMPORTS
 
 import "dart:async";
+import 'dart:io';
 import "package:flutter/material.dart";
+import 'package:path_provider/path_provider.dart';
 import "../DATA/data.dart";
 import "../DATA/page_index.dart";
 import "application_state.dart";
@@ -15,6 +17,8 @@ class START_PAGE extends StatefulWidget
 
     final APPLICATION_STATE
         ApplicationState;
+    final DATA
+        Data;
 
     // -- CONSTRUCTORS
 
@@ -23,25 +27,39 @@ class START_PAGE extends StatefulWidget
         DATA data
         ) :
         ApplicationState = application_state,
+        Data = data,
         super( key: UniqueKey() )
     {
+        InitializeDocumentFolderPath();
 
         Timer.periodic(
             const Duration( milliseconds: 100 ),
             ( Timer timer )
             {
-                timer.cancel();
+                if ( Data.DocumentFolderPath != "" )
+                {
+                    timer.cancel();
 
-                data.Load();
-                data.BuildBackupList();
+                    data.Load();
+                    data.BuildBackupList();
 
-                ApplicationState.SetPageIndex( null, PAGE_INDEX.Calendar );
+                    ApplicationState.SetPageIndex( null, PAGE_INDEX.Calendar );
+                }
             }
             );
     }
 
     // -- OPERATIONS
 
+    void InitializeDocumentFolderPath(
+        ) async
+    {
+        Directory directory = await getApplicationDocumentsDirectory();
+        Data.DocumentFolderPath = directory.path + "/";
+    }
+
+
+    // ~~
     @override
     START_STATE createState(
         )

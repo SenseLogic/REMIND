@@ -50,8 +50,6 @@ class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProvide
     {
         super.initState();
         WidgetsBinding.instance.addObserver( this );
-
-        widget.InitializeDocumentPath();
     }
 
     // ~~
