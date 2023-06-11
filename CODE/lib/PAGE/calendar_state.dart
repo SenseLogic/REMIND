@@ -15,7 +15,7 @@ import "course_page.dart";
 
 // -- TYPES
 
-class CALENDAR_STATE extends State<CALENDAR_PAGE> implements View
+class CALENDAR_STATE extends State<CALENDAR_PAGE> implements DataView
 {
     // -- CONSTRUCTORS
 
@@ -303,7 +303,7 @@ class CALENDAR_STATE extends State<CALENDAR_PAGE> implements View
         CALENDAR
             calendar;
 
-        ViewManager.instance.addView( this );
+        DataViewManager.instance.addView( this );
 
         calendar = widget.Data.GetCalendar();
 
@@ -365,7 +365,7 @@ class CALENDAR_STATE extends State<CALENDAR_PAGE> implements View
     void dispose(
         )
     {
-        ViewManager.instance.removeView( this );
+        DataViewManager.instance.removeView( this );
 
         super.dispose();
     }

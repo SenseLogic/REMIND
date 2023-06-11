@@ -8,7 +8,7 @@ import "planning_page.dart";
 
 // -- TYPES
 
-class PLANNING_LIST_STATE extends State<PLANNING_LIST_PAGE> implements View
+class PLANNING_LIST_STATE extends State<PLANNING_LIST_PAGE> implements DataView
 {
     // -- CONSTRUCTORS
 
@@ -211,7 +211,7 @@ class PLANNING_LIST_STATE extends State<PLANNING_LIST_PAGE> implements View
         BuildContext build_context
         )
     {
-        ViewManager.instance.addView( this );
+        DataViewManager.instance.addView( this );
 
         return Scaffold(
             appBar: AppBar(
@@ -249,7 +249,7 @@ class PLANNING_LIST_STATE extends State<PLANNING_LIST_PAGE> implements View
     void dispose(
         )
     {
-        ViewManager.instance.removeView( this );
+        DataViewManager.instance.removeView( this );
 
         super.dispose();
     }

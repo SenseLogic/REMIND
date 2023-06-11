@@ -7,7 +7,7 @@ import "option_list_page.dart";
 
 // -- TYPES
 
-class OPTION_LIST_STATE extends State<OPTION_LIST_PAGE> implements View
+class OPTION_LIST_STATE extends State<OPTION_LIST_PAGE> implements DataView
 {
     // -- CONSTRUCTORS
 
@@ -132,7 +132,7 @@ class OPTION_LIST_STATE extends State<OPTION_LIST_PAGE> implements View
         BuildContext build_context
         )
     {
-        ViewManager.instance.addView( this );
+        DataViewManager.instance.addView( this );
 
         return Scaffold(
             appBar: AppBar(
@@ -174,7 +174,7 @@ class OPTION_LIST_STATE extends State<OPTION_LIST_PAGE> implements View
     void dispose(
         )
     {
-        ViewManager.instance.removeView( this );
+        DataViewManager.instance.removeView( this );
 
         super.dispose();
     }

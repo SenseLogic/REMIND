@@ -10,7 +10,7 @@ import "backup_list_page.dart";
 
 // -- TYPES
 
-class BACKUP_LIST_STATE extends State<BACKUP_LIST_PAGE> implements View
+class BACKUP_LIST_STATE extends State<BACKUP_LIST_PAGE> implements DataView
 {
     // -- CONSTRUCTORS
 
@@ -411,7 +411,7 @@ class BACKUP_LIST_STATE extends State<BACKUP_LIST_PAGE> implements View
         BuildContext build_context
         )
     {
-        ViewManager.instance.addView( this );
+        DataViewManager.instance.addView( this );
 
         return Scaffold(
             appBar: AppBar(
@@ -452,7 +452,7 @@ class BACKUP_LIST_STATE extends State<BACKUP_LIST_PAGE> implements View
     void dispose(
         )
     {
-        ViewManager.instance.removeView( this );
+        DataViewManager.instance.removeView( this );
 
         super.dispose();
     }

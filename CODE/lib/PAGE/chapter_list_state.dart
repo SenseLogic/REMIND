@@ -12,7 +12,7 @@ import "course_page.dart";
 
 // -- TYPES
 
-class CHAPTER_LIST_STATE extends State<CHAPTER_LIST_PAGE> implements View
+class CHAPTER_LIST_STATE extends State<CHAPTER_LIST_PAGE> implements DataView
 {
     // -- CONSTRUCTORS
 
@@ -266,7 +266,7 @@ class CHAPTER_LIST_STATE extends State<CHAPTER_LIST_PAGE> implements View
         BuildContext build_context
         )
     {
-        ViewManager.instance.addView( this );
+        DataViewManager.instance.addView( this );
 
         return Scaffold(
             appBar: AppBar(
@@ -323,7 +323,7 @@ class CHAPTER_LIST_STATE extends State<CHAPTER_LIST_PAGE> implements View
     void dispose(
         )
     {
-        ViewManager.instance.removeView( this );
+        DataViewManager.instance.removeView( this );
 
         super.dispose();
     }

@@ -15,7 +15,7 @@ import "start_page.dart";
 
 // -- TYPES
 
-class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProviderStateMixin, WidgetsBindingObserver implements View
+class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProviderStateMixin, WidgetsBindingObserver implements DataView
 {
     // -- CONSTRUCTORS
 
@@ -291,7 +291,7 @@ class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProvide
         BuildContext build_context
         )
     {
-        ViewManager.instance.addView( this );
+        DataViewManager.instance.addView( this );
 
         widget.State = this;
 
@@ -311,7 +311,7 @@ class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProvide
                 ],
             supportedLocales: widget.Data.LocaleList,
             locale: widget.Data.Locale_,
-            navigatorObservers: <NavigatorObserver>[ ViewNavigatorObserver.instance ],
+            navigatorObservers: <NavigatorObserver>[ DataViewNavigatorObserver.instance ],
             home: GetView()
             );
     }
@@ -322,7 +322,7 @@ class APPLICATION_STATE extends State<APPLICATION_PAGE> with SingleTickerProvide
         )
     {
         WidgetsBinding.instance.removeObserver(this);
-        ViewManager.instance.removeView( this );
+        DataViewManager.instance.removeView( this );
 
         super.dispose();
     }

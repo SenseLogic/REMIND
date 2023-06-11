@@ -11,7 +11,7 @@ import "chapter_page.dart";
 
 // -- TYPES
 
-class CHAPTER_STATE extends State<CHAPTER_PAGE> implements View
+class CHAPTER_STATE extends State<CHAPTER_PAGE> implements DataView
 {
     // -- ATTRIBUTES
 
@@ -471,7 +471,7 @@ class CHAPTER_STATE extends State<CHAPTER_PAGE> implements View
         BuildContext build_context
         )
     {
-        ViewManager.instance.addView( this );
+        DataViewManager.instance.addView( this );
 
         return Scaffold(
             appBar: AppBar(
@@ -560,7 +560,7 @@ class CHAPTER_STATE extends State<CHAPTER_PAGE> implements View
     void dispose(
         )
     {
-        ViewManager.instance.removeView( this );
+        DataViewManager.instance.removeView( this );
 
         super.dispose();
     }
