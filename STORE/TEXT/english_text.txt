@@ -1,4 +1,12 @@
+-- NAME --
+
+ReMind Study Planner
+
+-- SUMMARY --
+
 Spaced repetition planner.
+
+-- DESCRIPTION --
 
 Study your courses more efficiently!
 
